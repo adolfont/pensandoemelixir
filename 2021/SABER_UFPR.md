@@ -8,7 +8,9 @@
 
 Adolfo Neto é professor da UTFPR, criador e co-host do Emílias Podcast - Mulheres na Computação e membro do projeto Emílias - Armação em Bits.
 
-## Título:  Elixir, a linguagem de programação brasileira utilizada no mundo todo
+## Título
+
+Elixir, a linguagem de programação brasileira utilizada no mundo todo
 
 ## Resumo
 
