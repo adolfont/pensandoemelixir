@@ -1,8 +1,12 @@
-# SABER UFPR
+# Palestra no SABER UFPR 2021
 
 - Quando? 02/09/2021 (QUI) 17:00-17:50
 - Onde? A definir
 
+- Página no Facebook do SABER: https://www.facebook.com/SABER.UFPR/
+- Instagram do SABER: https://www.instagram.com/saber.ufpr/
+
+Ano passado estive neste evento e a gravação está em [INTRODUÇÃO À LINGUAGEM ELIXIR! - Minicurso SABER UFPR 2020](https://youtu.be/0P941Wc8Vmo).
 
 ## Sobre o palestrante
 
