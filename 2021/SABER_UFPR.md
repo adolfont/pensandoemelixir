@@ -19,3 +19,20 @@ Elixir, a linguagem de programação brasileira utilizada no mundo todo
 ## Resumo
 
 Uma breve introdução à linguagem Elixir. Vamos conhecer as principais características da linguagem e porque ela é boa até mesmo para iniciantes em programação. 
+
+
+## Temas
+
+O que é Elixir?
+
+Elixir é mesmo uma linguagem brasileira? Foi criada por José Valim em 2011-12.
+
+É mesmo usada no mundo todo? Em produção? 
+- Escutem a série Elixir em Produção do podcast [Elixir em Foco](https://anchor.fm/elixiremfoco/)
+
+
+
+
+
+
+
