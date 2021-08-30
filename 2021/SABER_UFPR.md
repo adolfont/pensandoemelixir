@@ -1,7 +1,7 @@
 # Palestra no SABER UFPR 2021
 
 - Quando? 02/09/2021 (QUI) 17:00-17:50
-- Onde? A definir
+- Onde? https://web.inf.ufpr.br/pet/saber2021/
 
 - Página no Facebook do SABER: https://www.facebook.com/SABER.UFPR/
 - Instagram do SABER: https://www.instagram.com/saber.ufpr/
