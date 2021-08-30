@@ -25,7 +25,7 @@ Uma breve introdução à linguagem Elixir. Vamos conhecer as principais caracte
 
 O que é Elixir?
 
-Elixir é mesmo uma linguagem brasileira? Foi criada por José Valim em 2011-12.
+Elixir é mesmo uma linguagem brasileira? Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que ela é brasileira?
 
 É mesmo usada no mundo todo? Em produção? 
 - Escutem a série Elixir em Produção do podcast [Elixir em Foco](https://anchor.fm/elixiremfoco/)
