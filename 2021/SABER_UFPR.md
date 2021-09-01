@@ -42,6 +42,18 @@ Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que e
 - [Code BEAM BR](https://www.codebeambr.com/)
 
 
+### As melhores características de Elixir
+
+#### A BEAM
+#### A BEAM
+#### A BEAM
+#### Casamento de padrões (pattern matching)
+#### Sintaxe amigável (omissão de parênteses)
+#### O operador pipe
+#### Funções de Ordem Superior
+
+
+
 
 
 
