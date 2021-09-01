@@ -29,7 +29,8 @@ Elixir é mesmo uma linguagem brasileira? Foi criada por José Valim em 2011-12.
 
 É mesmo usada no mundo todo? Em produção? 
 - Escutem a série Elixir em Produção do podcast [Elixir em Foco](https://anchor.fm/elixiremfoco/)
-
+- Elixir é a [quarta linguagem com melhor fator amada/temida da pesquisa com usuários do StackOverflow de 2021](https://insights.stackoverflow.com/survey/2021#technology-most-loved-dreaded-and-wanted) e está em [posição 17 entre as mais desejadas](https://insights.stackoverflow.com/survey/2021#most-loved-dreaded-and-wanted-language-want).
+- Na mesma pesquisa, é a [terceira que paga melhor](https://insights.stackoverflow.com/survey/2021#technology-top-paying-technologies).
 
 
 
