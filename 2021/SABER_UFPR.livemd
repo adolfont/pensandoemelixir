@@ -70,6 +70,8 @@ https://github.com/livebook-dev/livebook
 ### Aprenda mais
 
 * [Exercism](https://exercism.org/)
+* [Elixir School](https://elixirschool.com/pt/)
+* Livros! https://pragprog.com/ https://www.casadocodigo.com.br/products/livro-elixir
 
 ### Acompanhe a comunidade
 
