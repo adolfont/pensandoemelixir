@@ -13,7 +13,6 @@
 Ano passado estive neste evento e a gravação está em [INTRODUÇÃO À LINGUAGEM ELIXIR! - Minicurso SABER UFPR 2020](https://youtu.be/0P941Wc8Vmo).
 
 ## Sobre o palestrante
-ls
 
 Adolfo Neto é professor da UTFPR, criador e co-host do Emílias Podcast - Mulheres na Computação e membro do projeto Emílias - Armação em Bits.
 
