@@ -67,6 +67,10 @@ https://github.com/livebook-dev/livebook
 
 ## Final
 
+### Aprenda mais
+
+* [Exercism](https://exercism.org/)
+
 ### Acompanhe a comunidade
 
 * [Elixir Brasil 2021](https://twitter.com/elixir_brasil/)
