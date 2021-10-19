@@ -1,6 +1,6 @@
 # Palestra no SABER UFPR 2021
 
-[![Run in Livebook](https://livebook.dev/badge/v1/black.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FSABER_UFPR.md)
+[![Run in Livebook](https://livebook.dev/badge/v1/gray.svg)](https://livebook.dev/run?url=http%3A%2F%2Flocalhost%3A8080%2F%3Ftoken%3Dkasqq75vw2oeei2umsxmsydtpn3glvhk)
 
 
 ## Elixir, a linguagem de programação brasileira utilizada no mundo todo
