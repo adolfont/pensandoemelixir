@@ -1,18 +1,18 @@
-# Palestra no SABER UFPR 2021
+# Palestra na UFBA
 
-[![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FSABER_UFPR.livemd)
+[![Execute em uma Instalação de Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FUFBA.md)
 
 ## Elixir, a linguagem de programação brasileira utilizada no mundo todo
 
-* Quando? 02/09/2021 (QUI) 17:00-17:50
+* Quando? 20/10/2021 (QUI) 13:00-15:00
 
-* Onde? https://web.inf.ufpr.br/pet/saber2021/
+* Onde? Informação privada.
 
 * Página no Facebook do SABER: https://www.facebook.com/SABER.UFPR/
 
-* Instagram do SABER: https://www.instagram.com/saber.ufpr/
+* Página da disciplina: [MATA56 - Paradigmas de Linguagens de Programação](https://github.com/mata56-ic-ufba/paradigmas)
 
-Ano passado estive neste evento e a gravação está em [INTRODUÇÃO À LINGUAGEM ELIXIR! - Minicurso SABER UFPR 2020](https://youtu.be/0P941Wc8Vmo).
+
 
 ## Sobre o palestrante
 
