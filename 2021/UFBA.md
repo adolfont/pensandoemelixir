@@ -94,10 +94,24 @@ imc = &(&1/(&2*&2))
 imc.(100,1.5)
 ```
 
-
 ### Funções matemáticas (puras)
 
+Para as mesmas entradas, sempre retorna as mesmas saídas.
+
+Não alteram o estado geral do sistema.
+
 ### Não-funções matemtáticas (funções impuras)
+
+Para as mesmas entradas, a cada execução pode retornar uma saída diferente.
+
+Exemplo:
+
+```elixir
+Enum.shuffle([1,2,3])
+```
+
+Ou alteram o estado geral do sistema.
+
 
 ## A BEAM
 
