@@ -73,6 +73,12 @@ end
 Saude.calcula_imc(100, 1.5)
 ```
 
+## Funções anônimas
+
+```elixir
+fn peso, altura -> peso / (altura * altura) end
+```
+
 ### Funções matemáticas (puras)
 
 ### Não-funções matemtáticas (funções impuras)
