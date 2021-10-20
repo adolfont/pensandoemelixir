@@ -1,4 +1,4 @@
-# Palestra na UFBA
+# Palestra na Universidade Federal da Bahia (UFBA)
 
 [![Execute em uma Instalação de Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FUFBA.md)
 
