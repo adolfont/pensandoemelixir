@@ -2,7 +2,9 @@
 
 ## Elixir, a linguagem de programação brasileira utilizada no mundo todo
 
-[![Execute em uma Instalação de Livebook](https://i.ibb.co/6F67475/Execute-em-uma-inst-ncia-do-Livebook.png)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FUFBA.md)
+[![Execute em uma Instalação de Livebook](https://i.ibb.co/XYcR1dy/Execute-em-uma-instalacao-do-Livebook.png)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FUFBA.md)
+
+<!-- UFBAUTFPR2021 adolfont.fly.dev -->
 
 * Quando? 20/10/2021 (QUI) 13:00-15:00
 
