@@ -1,18 +1,236 @@
-# Palestra na Universidade Federal da Bahia (UFBA)
+livebook
 
+
+?
+Palestra na Universidade Federal da Bahia (UFBA)
+
+Elixir, a linguagem de programação brasileira utilizada no mundo todo
++ Markdown
++ Elixir
++ Input
++ Section
+
+
+
+
+Execute em uma Instalação de Livebook
+
+Quando? 20/10/2021 (QUI) 13:00-15:00
+
+Onde? Informação privada.
+
+Página da disciplina: MATA56 - Paradigmas de Linguagens de Programação
+
++ Markdown
++ Elixir
++ Input
++ Section
+Sobre o palestrante
++ Markdown
++ Elixir
++ Input
++ Section
+
+
+
+
+Adolfo Neto é professor da UTFPR, criador e co-host do Emílias Podcast - Mulheres na Computação e membro do projeto Emílias - Armação em Bits.
+
++ Markdown
++ Elixir
++ Input
++ Section
+Resumo
++ Markdown
++ Elixir
++ Input
++ Section
+
+
+
+
+Uma breve introdução à linguagem Elixir. Vamos conhecer as principais características da linguagem e porque ela é boa até mesmo para iniciantes em programação.
+
++ Markdown
++ Elixir
++ Input
++ Section
+
+
+
+
+O que é Elixir?
+Site de Elixir
+Página na Wikipédia sobre Elixir
+Elixir é mesmo uma linguagem brasileira?
+Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que ela é brasileira?
+
+É mesmo usada no mundo todo? Em produção?
+Escutem a série Elixir em Produção do podcast Elixir em Foco
+Um dos 6 podcasts ativos relacionados a Elixir ou á BEAM
+Elixir é a quarta linguagem com melhor fator amada/temida da pesquisa com usuários do StackOverflow de 2021 e está em posição 17 entre as mais desejadas.
+Na mesma pesquisa, é a terceira que paga melhor.
+Empresas que usam Elixir 1, 2, 3, 4, 5
+Empregos para Devs Elixir
+É o assunto de várias conferências!
+ElixirConf: Europe, USA/World, Africa
+Code BEAM. A próxima será a Code BEAM America 2021
+Elixir Brasil - 27 e 28 de novembro de 2021
+Code BEAM BR
++ Markdown
++ Elixir
++ Input
++ Section
+Isto aqui é o Livebook!
++ Markdown
++ Elixir
++ Input
++ Section
+
+
+
+
+Um software para a criação de nobebooks interativos com código em Elixir,dados e documentação.
+
+Repositório de código aberto: https://github.com/livebook-dev/livebook
+Site: http://livebook.dev
++ Markdown
++ Elixir
++ Input
++ Section
+As melhores características de Elixir
++ Markdown
++ Elixir
++ Input
++ Section
+Funções na computação
++ Markdown
++ Elixir
++ Input
++ Section
+Funções nomeadas em módulos
++ Markdown
++ Elixir
++ Input
++ Section
+
+Reevaluate
+
+
+
+23451
+defmodule Saude do
+  def calcula_imc(peso, altura) do
+    peso/(altura*altura)
+  end
+end
+Evaluated
+{:module, Saude, <<70, 79, 82, 49, 0, 0, 5, ...>>, {:calcula_imc, 2}}
++ Markdown
++ Elixir
++ Input
++ Section
+
+Reevaluate
+
+
+
+1
+Saude.calcula_imc(100, 1.5)
+Evaluated
+44.44444444444444
++ Markdown
++ Elixir
++ Input
++ Section
+
+
+
+
+Funções matemáticas (puras)
+Não-funções matemtáticas (funções impuras)
++ Markdown
++ Elixir
++ Input
++ Section
+A BEAM
++ Markdown
++ Elixir
++ Input
++ Section
+
+
+
+
+Introduction to Erlang
+
++ Markdown
++ Elixir
++ Input
++ Section
+Casamento de padrões (pattern matching)
++ Markdown
++ Elixir
++ Input
++ Section
+Sintaxe amigável (ex. omissão de parênteses)
++ Markdown
++ Elixir
++ Input
++ Section
+O Operador Pipe
++ Markdown
++ Elixir
++ Input
++ Section
+Funções de Ordem Superior
++ Markdown
++ Elixir
++ Input
++ Section
+Final
++ Markdown
++ Elixir
++ Input
++ Section
+
+
+
+
+Acompanhe a comunidade
+Elixir Brasil 2021
+https://twitter.com/elixir_utfpr
+https://twitter.com/adolfont
+https://twitter.com/elixiremfoco
+https://www.youtube.com/c/AdolfoNeto
+Elixir, Erlang and the BEAM with Adolfo Neto
+Erlang Ecosystem Foundation
+Telegram (Elixir Brasil, ELUG_CE)
++ Markdown
++ Elixir
++ Input
++ Section
+
+(esc)
+Export
+Here you can preview and directly export the notebook source.
+
+Live Markdown
+Elixir Script
+Include outputs
+.livemd
+
+# Palestra na Universidade Federal da Bahia (UFBA)
 
 ## Elixir, a linguagem de programação brasileira utilizada no mundo todo
 
 [![Execute em uma Instalação de Livebook](https://i.ibb.co/6F67475/Execute-em-uma-inst-ncia-do-Livebook.png)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FUFBA.md)
-
 
 * Quando? 20/10/2021 (QUI) 13:00-15:00
 
 * Onde? Informação privada.
 
 * Página da disciplina: [MATA56 - Paradigmas de Linguagens de Programação](https://github.com/mata56-ic-ufba/paradigmas)
-
-
 
 ## Sobre o palestrante
 
@@ -36,6 +254,7 @@ Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que e
 ### É mesmo usada no mundo todo? Em produção?
 
 * Escutem a série Elixir em Produção do podcast [Elixir em Foco](https://anchor.fm/elixiremfoco/)
+  * Um dos [6 podcasts ativos relacionados a Elixir ou á BEAM](https://elixirschool.com/en/podcasts)
 * Elixir é a [quarta linguagem com melhor fator amada/temida da pesquisa com usuários do StackOverflow de 2021](https://insights.stackoverflow.com/survey/2021#technology-most-loved-dreaded-and-wanted) e está em [posição 17 entre as mais desejadas](https://insights.stackoverflow.com/survey/2021#most-loved-dreaded-and-wanted-language-want).
 * Na mesma pesquisa, é a [terceira que paga melhor](https://insights.stackoverflow.com/survey/2021#technology-top-paying-technologies).
 * Empresas que usam Elixir [1](https://serokell.io/blog/elixir-in-production), 
@@ -46,16 +265,33 @@ Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que e
 
 * ElixirConf: [Europe](https://www.elixirconf.eu/), [USA/World](https://www.elixirconf.com/), [Africa](https://elixirconf.africa/)
 * Code BEAM. A próxima será a [Code BEAM America 2021](https://codesync.global/conferences/code-beam-sf-2021/)
-* [Elixir Brasil](https://elixirbrasil.com/pt/)
+* [Elixir Brasil](https://twitter.com/elixir_brasil) - 27 e 28 de novembro de 2021
 * [Code BEAM BR](https://www.codebeambr.com/)
 
-## Isto é o Livebook!
+## Isto aqui é o Livebook!
 
-https://github.com/livebook-dev/livebook
+Um software para a criação de nobebooks interativos com código em Elixir,dados e documentação.
+
+* Repositório de código aberto: https://github.com/livebook-dev/livebook
+* Site: http://livebook.dev
 
 ## As melhores características de Elixir
 
 ## Funções na computação
+
+## Funções nomeadas em módulos
+
+```elixir
+defmodule Saude do
+  def calcula_imc(peso, altura) do
+    peso / (altura * altura)
+  end
+end
+```
+
+```elixir
+Saude.calcula_imc(100, 1.5)
+```
 
 ### Funções matemáticas (puras)
 
