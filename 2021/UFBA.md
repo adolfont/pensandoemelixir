@@ -6,7 +6,7 @@ Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Liveb
 
 <!-- UFBAUTFPR2021 adolfont.fly.dev -->
 
-* Quando? 20/10/2021 (QUI) 13:00-15:00
+* Quando? ???? (QUI) 13:00-15:00
 
 * Onde? Informação privada.
 
