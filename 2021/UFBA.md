@@ -10,8 +10,6 @@
 
 * Onde? Informação privada.
 
-* Página no Facebook do SABER: https://www.facebook.com/SABER.UFPR/
-
 * Página da disciplina: [MATA56 - Paradigmas de Linguagens de Programação](https://github.com/mata56-ic-ufba/paradigmas)
 
 
