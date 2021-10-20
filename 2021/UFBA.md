@@ -1,6 +1,6 @@
 # Palestra na Universidade Federal da Bahia (UFBA)
 
-## Elixir, a linguagem de programação brasileira utilizada no mundo todo
+## Elixir, a linguagem de programação brasileira de cósigo aberto utilizada no mundo todo
 
 Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Livebook](https://i.ibb.co/XYcR1dy/Execute-em-uma-instalacao-do-Livebook.png)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FUFBA.md)
 
@@ -50,7 +50,7 @@ Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que e
 
 ## Isto aqui é o Livebook!
 
-Um software para a criação de nobebooks interativos com código em Elixir,dados e documentação.
+Tudo o que vocês estão vendo está sendo executado em uma instalação de Livebook, um software para a criação de nobebooks interativos com código em Elixir, dados e documentação.
 
 * Repositório de código aberto: https://github.com/livebook-dev/livebook
 * Site: http://livebook.dev
@@ -78,6 +78,22 @@ Saude.calcula_imc(100, 1.5)
 ```elixir
 fn peso, altura -> peso / (altura * altura) end
 ```
+
+```elixir
+imc = fn peso, altura -> peso / (altura * altura) end
+imc.(100,1.5)
+```
+
+
+```elixir
+&(&1/(&2*&2))
+```
+
+```elixir
+imc = &(&1/(&2*&2))
+imc.(100,1.5)
+```
+
 
 ### Funções matemáticas (puras)
 
