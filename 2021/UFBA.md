@@ -55,6 +55,12 @@ https://github.com/livebook-dev/livebook
 
 ## As melhores características de Elixir
 
+## Funções na computação
+
+### Funções matemáticas (puras)
+
+### Não-funções matemtáticas (funções impuras)
+
 ## A BEAM
 
 [Introduction to Erlang](https://serokell.io/blog/introduction-to-erlang)
