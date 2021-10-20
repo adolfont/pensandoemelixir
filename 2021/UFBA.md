@@ -1,8 +1,10 @@
 # Palestra na Universidade Federal da Bahia (UFBA)
 
-[![Execute em uma Instalação de Livebook](https://i.ibb.co/6F67475/Execute-em-uma-inst-ncia-do-Livebook.png)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FUFBA.md)
 
 ## Elixir, a linguagem de programação brasileira utilizada no mundo todo
+
+[![Execute em uma Instalação de Livebook](https://i.ibb.co/6F67475/Execute-em-uma-inst-ncia-do-Livebook.png)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FUFBA.md)
+
 
 * Quando? 20/10/2021 (QUI) 13:00-15:00
 
