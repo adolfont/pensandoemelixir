@@ -6,11 +6,9 @@ Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Liveb
 
 <!-- UFBAUTFPR2021 adolfont.fly.dev -->
 
-* Quando? ???? (QUI) 13:00-15:00
-
-* Onde? Informação privada.
-
-* Página da disciplina: [MATA56 - Paradigmas de Linguagens de Programação](https://github.com/mata56-ic-ufba/paradigmas)
+- Evento: 11ª Semana de Ciência da Computação e Tecnologia da Informação
+- Site: https://cciuenf.github.io/scti2020/ https://archive.md/pQOhS
+- 08/11/2021 18h00
 
 ## Sobre o palestrante
 
