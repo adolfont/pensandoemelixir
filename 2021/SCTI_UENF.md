@@ -2,7 +2,7 @@
 
 ## Elixir, a linguagem de programação brasileira de código aberto utilizada no mundo todo
 
-Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Livebook](https://i.ibb.co/XYcR1dy/Execute-em-uma-instalacao-do-Livebook.png)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FUFBA.md)
+Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Livebook](https://i.ibb.co/XYcR1dy/Execute-em-uma-instalacao-do-Livebook.png)](https://github.com/adolfont/pensandoemelixir/blob/main/2021/SCTI_UENF.md)
 
 <!-- UFBAUTFPR2021 adolfont.fly.dev -->
 
