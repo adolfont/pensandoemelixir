@@ -22,15 +22,16 @@ defmodule Mergesort do
 
   def merge_lists(lists) do
     lists
-    |> merge_pass([])
+    |> merge_pass()
     |> merge_lists()
   end
 
-  def merge_pass([], acc), do: acc
+  def merge_pass(list), do: merge_pass(list, [])
+  defp merge_pass([], acc), do: acc
 
-  def merge_pass([xs], acc), do: [xs | acc]
+  defp merge_pass([xs], acc), do: [xs | acc]
 
-  def merge_pass([xs, ys | rest], acc) do
+  defp merge_pass([xs, ys | rest], acc) do
     merge_pass(rest, [merge(xs, ys) | acc])
   end
 

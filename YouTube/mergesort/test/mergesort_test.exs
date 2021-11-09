@@ -61,7 +61,7 @@ defmodule MergesortTest do
   test "Tests for auxiliary function merge_pass/2 ONE PASS" do
     list_with_one_element_which_is_a_list = [[1]]
 
-    assert Mergesort.merge_pass(list_with_one_element_which_is_a_list, []) == [[1]]
+    assert Mergesort.merge_pass(list_with_one_element_which_is_a_list) == [[1]]
 
     list_for_this_test = [
       [2],
@@ -70,7 +70,7 @@ defmodule MergesortTest do
       [4]
     ]
 
-    assert Mergesort.merge_pass(list_for_this_test, []) ==
+    assert Mergesort.merge_pass(list_for_this_test) ==
              [[4, 5], [1, 2]]
 
     list_for_this_test = [
@@ -81,18 +81,15 @@ defmodule MergesortTest do
       [0]
     ]
 
-    assert Mergesort.merge_pass(list_for_this_test, []) ==
+    assert Mergesort.merge_pass(list_for_this_test) ==
              [[0], [4, 5], [1, 2]]
   end
 
   test "Tests for auxiliary function merge_pass/2 TWO PASSES" do
     list_for_this_test = [[1], [5], [2], [3], [8], [2], [4], [3]]
 
-    assert Mergesort.merge_pass(
-             list_for_this_test,
-             []
-           )
-           |> Mergesort.merge_pass([]) ==
+    assert Mergesort.merge_pass(list_for_this_test)
+           |> Mergesort.merge_pass() ==
              [[1, 2, 3, 5], [2, 3, 4, 8]]
   end
 
