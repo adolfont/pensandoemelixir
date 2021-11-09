@@ -2,9 +2,10 @@
 
 ## Elixir, a linguagem de programação brasileira de código aberto utilizada no mundo todo
 
-Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Livebook](https://i.ibb.co/XYcR1dy/Execute-em-uma-instalacao-do-Livebook.png)](https://github.com/adolfont/pensandoemelixir/blob/main/2021/SCTI_UENF.md)
+Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Livebook](https://i.ibb.co/XYcR1dy/Execute-em-uma-instalacao-do-Livebook.png)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2Fadolfont%2Fpensandoemelixir%2Fblob%2Fmain%2F2021%2FSCTI_UENF.md)
 
-<!-- UFBAUTFPR2021 adolfont.fly.dev -->
+
+<!-- SCTIUTFPR2021 https://elixirutfpr.fly.dev/ -->
 
 - Evento: 11ª Semana de Ciência da Computação e Tecnologia da Informação
 - Site: https://cciuenf.github.io/scti2020/ https://archive.md/pQOhS
@@ -19,6 +20,7 @@ Adolfo Neto é professor da UTFPR, criador e co-host do Emílias Podcast - Mulhe
 - Elixir em Foco https://anchor.fm/elixiremfoco/ https://anchor.fm/elixiremfoco/
 - Elixir_UTFPR https://twitter.com/elixir_utfpr
 - YouTube https://www.youtube.com/c/AdolfoNeto
+
 
 
 
