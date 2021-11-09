@@ -1,4 +1,4 @@
-# Palestra na Universidade Federal da Bahia (UFBA)
+# Palestra na Semana de Ciência da Computação e Tecnologia da Informação
 
 ## Elixir, a linguagem de programação brasileira de código aberto utilizada no mundo todo
 
@@ -14,6 +14,14 @@ Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Liveb
 
 Adolfo Neto é professor da UTFPR, criador e co-host do Emílias Podcast - Mulheres na Computação e membro do projeto Emílias - Armação em Bits.
 
+- Twitter https://twitter.com/adolfont
+- Erlang Ecosystem Foundation  https://erlef.org/wg/education
+- Elixir em Foco https://anchor.fm/elixiremfoco/ https://anchor.fm/elixiremfoco/
+- Elixir_UTFPR https://twitter.com/elixir_utfpr
+- YouTube https://www.youtube.com/c/AdolfoNeto
+
+
+
 ## Resumo
 
 Uma breve introdução à linguagem Elixir. Vamos conhecer as principais características da linguagem e porque ela é boa até mesmo para iniciantes em programação.
@@ -28,6 +36,11 @@ Uma breve introdução à linguagem Elixir. Vamos conhecer as principais caracte
 ### Elixir é mesmo uma linguagem brasileira?
 
 Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que ela é brasileira?
+
+### Vagas 
+
+[100 mil dólares](https://twitter.com/elixir_utfpr/status/1458078709487915017?s=20)
+
 
 ### É mesmo usada no mundo todo? Em produção?
 
