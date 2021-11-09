@@ -18,7 +18,6 @@ defmodule Mergesort do
     |> merge_lists()
   end
 
-
   def merge_lists([list]), do: list
 
   def merge_lists(lists) do
@@ -32,7 +31,7 @@ defmodule Mergesort do
   def merge_pass([xs], acc), do: [xs | acc]
 
   def merge_pass([xs, ys | rest], acc) do
-     merge_pass(rest, [merge(xs, ys) | acc])
+    merge_pass(rest, [merge(xs, ys) | acc])
   end
 
   def merge(xs, []), do: xs
