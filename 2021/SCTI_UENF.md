@@ -57,7 +57,7 @@ Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que e
 ### É o assunto de várias conferências!
 
 * ElixirConf: [Europe](https://www.elixirconf.eu/), [USA/World](https://www.elixirconf.com/), [Africa](https://elixirconf.africa/)
-* Code BEAM. A próxima será a [Code BEAM America 2021](https://codesync.global/conferences/code-beam-sf-2021/)
+* Code BEAM. A mais recente foi a [Code BEAM America 2021](https://codesync.global/conferences/code-beam-sf-2021/)
 * [Elixir Brasil](https://twitter.com/elixir_brasil) - 27 e 28 de novembro de 2021
 * [Code BEAM BR](https://www.codebeambr.com/)
 
@@ -113,7 +113,7 @@ Para as mesmas entradas, sempre retorna as mesmas saídas.
 
 Não alteram o estado geral do sistema.
 
-### Não-funções matemtáticas (funções impuras)
+### Não-funções matemáticas (funções impuras)
 
 Para as mesmas entradas, a cada execução pode retornar uma saída diferente.
 
