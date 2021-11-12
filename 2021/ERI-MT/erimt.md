@@ -60,88 +60,6 @@ Tudo o que vocês estão vendo está sendo executado em uma instalação de Live
 * Repositório de código aberto: https://github.com/livebook-dev/livebook
 * Site: http://livebook.dev
 
-## As melhores características de Elixir
-
-## Funções na computação
-
-## Funções nomeadas em módulos
-
-```elixir
-defmodule Saude do
-  def calcula_imc(peso, altura) do
-    peso / (altura * altura)
-  end
-end
-```
-
-```elixir
-Saude.calcula_imc(100, 1.5)
-```
-
-## Funções anônimas
-
-```elixir
-fn peso, altura -> peso / (altura * altura) end
-```
-
-```elixir
-imc = fn peso, altura -> peso / (altura * altura) end
-imc.(100,1.5)
-```
-
-
-```elixir
-&(&1/(&2*&2))
-```
-
-```elixir
-imc = &(&1/(&2*&2))
-imc.(100,1.5)
-```
-
-### Funções matemáticas (puras)
-
-Para as mesmas entradas, sempre retorna as mesmas saídas.
-
-Não alteram o estado geral do sistema.
-
-### Não-funções matemáticas (funções impuras)
-
-Para as mesmas entradas, a cada execução pode retornar uma saída diferente.
-
-Exemplo:
-
-```elixir
-Enum.shuffle([1,2,3])
-```
-
-Ou alteram o estado geral do sistema.
-
-
-## A BEAM
-
-[Introduction to Erlang](https://serokell.io/blog/introduction-to-erlang)
-
-## Casamento de padrões (pattern matching)
-
-## Sintaxe amigável (ex. omissão de parênteses)
-
-## O Operador Pipe
-
-## Funções de Ordem Superior
-
-## Final
-
-### Acompanhe a comunidade
-
-* [Elixir Brasil 2021](https://twitter.com/elixir_brasil/)
-* https://twitter.com/elixir_utfpr
-* https://twitter.com/adolfont
-* https://twitter.com/elixiremfoco
-* https://www.youtube.com/c/AdolfoNeto
-* [Elixir, Erlang and the BEAM with Adolfo Neto](https://www.youtube.com/channel/UC6ETZk7tlYJzfRz-zS9B6xw)
-* [Erlang Ecosystem Foundation](https://erlef.org/)
-* Telegram (Elixir Brasil, ELUG_CE)
 
 ## As melhores características de Elixir
 
@@ -262,4 +180,15 @@ g.(4)
 * https://www.lua.org/about.html
 * https://elixir-lang.org/cases.html
 * https://exercism.org/
+* WSL https://www.google.com/search?q=WSL+windows&sxsrf=AOaemvLnsz1bcgvMX3ICeDSU9BZjzCmUbQ%3A1636748502185&ei=1syOYdzTCv7Q1sQPyfCPqAs&oq=WSL+windows&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEEMyBQgAEMsBMgUIABDLATIECAAQQzIFCAAQywEyBQgAEMsBMgUIABDLATIFCAAQywEyBQgAEMsBMgUIABDLAToHCAAQRxCwAzoECCMQJzoECC4QQzoKCAAQgAQQhwIQFEoECEEYAFClBVjAEGD3EGgAcAN4AIAB4QKIAdENkgEFMi00LjKYAQCgAQHIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwjclryo05P0AhV-qJUCHUn4A7UQ4dUDCA4&uact=5
+* https://dev.to/guilherme44/pt-br-instalando-elixir-com-asdf-277h
+* https://www.beecrowd.com.br/judge/en/login
+* https://github.com/groxio-learning/grapevine
+* https://www.phoenixframework.org/blog/build-a-real-time-twitter-clone-in-15-minutes-with-live-view-and-phoenix-1-5
 
+* https://t.me/elixirbr
+* https://t.me/elug_ce
+* https://twitter.com/search?q=%23MyElixirStatus&src=typed_query&f=live
+* https://www.sympla.com.br/semana-da-ciencia-da-computacao-e-tecnologia-da-informacao--scti-2021__1263117
+* https://github.com/pilhacheia/tretadev/issues/85
+* https://elixirforum.com/t/which-code-editor-or-ide-do-you-use/78/14
