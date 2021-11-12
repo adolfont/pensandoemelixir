@@ -604,3 +604,6 @@ g.(4)
 * https://t.me/elixirbr
 * https://t.me/elug_ce
 * https://twitter.com/search?q=%23MyElixirStatus&src=typed_query&f=live
+* https://www.sympla.com.br/semana-da-ciencia-da-computacao-e-tecnologia-da-informacao--scti-2021__1263117
+* https://github.com/pilhacheia/tretadev/issues/85
+* https://elixirforum.com/t/which-code-editor-or-ide-do-you-use/78/14
