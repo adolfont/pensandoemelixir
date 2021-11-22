@@ -6,7 +6,8 @@ Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Liveb
 
 <!-- UFBAUTFPR2021 adolfont.fly.dev -->
 
-* Quando? ???? (QUI) 13:00-15:00
+
+* Quando? 22/11 (SEG) 13:00-15:00
 
 * Onde? Informação privada.
 
@@ -43,9 +44,9 @@ Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que e
 
 ### É o assunto de várias conferências!
 
-* ElixirConf: [Europe](https://www.elixirconf.eu/), [USA/World](https://www.elixirconf.com/), [Africa](https://elixirconf.africa/)
-* Code BEAM. A próxima será a [Code BEAM America 2021](https://codesync.global/conferences/code-beam-sf-2021/)
 * [Elixir Brasil](https://twitter.com/elixir_brasil) - 27 e 28 de novembro de 2021
+* ElixirConf: [Europe](https://www.elixirconf.eu/), [USA/World](https://www.elixirconf.com/), [Africa](https://elixirconf.africa/)
+* Code BEAM. A mais recente foi a [Code BEAM America 2021](https://codesync.global/conferences/code-beam-sf-2021/)
 * [Code BEAM BR](https://www.codebeambr.com/)
 
 ## Isto aqui é o Livebook!
@@ -54,6 +55,8 @@ Tudo o que vocês estão vendo está sendo executado em uma instalação de Live
 
 * Repositório de código aberto: https://github.com/livebook-dev/livebook
 * Site: http://livebook.dev
+* Você pode testar de graça no https://fly.io/!!!
+
 
 ## As melhores características de Elixir
 
@@ -100,7 +103,7 @@ Para as mesmas entradas, sempre retorna as mesmas saídas.
 
 Não alteram o estado geral do sistema.
 
-### Não-funções matemtáticas (funções impuras)
+### Não-funções matemáticas (funções impuras)
 
 Para as mesmas entradas, a cada execução pode retornar uma saída diferente.
 
@@ -115,9 +118,13 @@ Ou alteram o estado geral do sistema.
 
 ## A BEAM
 
-[Introduction to Erlang](https://serokell.io/blog/introduction-to-erlang)
+- [Introduction to Erlang](https://serokell.io/blog/introduction-to-erlang)
 
 ## Casamento de padrões (pattern matching)
+
+- //Joker//
+- //Pin//
+- lado esquerdo vs. lado direito
 
 ## Sintaxe amigável (ex. omissão de parênteses)
 
@@ -127,9 +134,14 @@ Ou alteram o estado geral do sistema.
 
 ## Final
 
+- Responder as perguntas do início
+  - Elixir é brasileira? [É uma linguagem globalizada](https://youtu.be/e335dWkFyUU)
+  - Como se pronuncia Elixir? ["Não importa, o importante é que você chame"](https://youtu.be/e335dWkFyUU)
+
 ### Acompanhe a comunidade
 
 * [Elixir Brasil 2021](https://twitter.com/elixir_brasil/)
+* [Advent of Code 2021 com José Valim](https://twitter.com/josevalim/status/1461064540465078273)
 * https://twitter.com/elixir_utfpr
 * https://twitter.com/adolfont
 * https://twitter.com/elixiremfoco
