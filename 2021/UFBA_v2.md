@@ -6,7 +6,6 @@ Execute em uma Instalação de Livebook: [![Execute em uma Instalação de Liveb
 
 <!-- UFBAUTFPR2021 adolfont.fly.dev -->
 
-
 * Quando? 22/11 (SEG) 13:00-15:00
 
 * Onde? Informação privada.
@@ -34,11 +33,10 @@ Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que e
 
 ## Como se pronuncia Elixir?
 
-- Eli*chír*
-- Elikzír
-- Élikzir
-- Elíkzir
-
+* Eli*chír*
+* Elikzír
+* Élikzir
+* Elíkzir
 
 ### É mesmo usada no mundo todo? Em produção?
 
@@ -59,12 +57,11 @@ Foi criada por José Valim em 2011-12. Mas isto é o suficiente para dizer que e
 
 ## Isto aqui é o Livebook!
 
-Tudo o que vocês estão vendo está sendo executado em uma instalação de Livebook, um software para a criação de notebooks interativos com código em Elixir, dados e documentação.
+Tudo o que vocês estão vendo está sendo executado em uma instalação de Livebook, um software para a criação de nobebooks interativos com código em Elixir, dados e documentação.
 
 * Repositório de código aberto: https://github.com/livebook-dev/livebook
 * Site: http://livebook.dev
 * Você pode testar de graça no https://fly.io/!!!
-
 
 ## As melhores características de Elixir
 
@@ -77,11 +74,18 @@ defmodule Saude do
   def calcula_imc(peso, altura) do
     peso / (altura * altura)
   end
+
+  def peso_normal?(peso, altura) do
+    imc = calcula_imc(peso, altura)
+    imc >= 18.5 and imc <= 25
+  end
 end
 ```
 
 ```elixir
-Saude.calcula_imc(100, 1.5)
+IO.puts(Saude.calcula_imc(70, 1.8))
+IO.puts(Saude.peso_normal?(70, 1.8))
+IO.puts(Saude.peso_normal?(100, 1.8))
 ```
 
 ## Funções anônimas
@@ -92,17 +96,16 @@ fn peso, altura -> peso / (altura * altura) end
 
 ```elixir
 imc = fn peso, altura -> peso / (altura * altura) end
-imc.(100,1.5)
-```
-
-
-```elixir
-&(&1/(&2*&2))
+imc.(100, 1.5)
 ```
 
 ```elixir
-imc = &(&1/(&2*&2))
-imc.(100,1.5)
+&(&1 / (&2 * &2))
+```
+
+```elixir
+imc = &(&1 / (&2 * &2))
+imc.(100, 1.5)
 ```
 
 ### Funções matemáticas (puras)
@@ -118,33 +121,78 @@ Para as mesmas entradas, a cada execução pode retornar uma saída diferente.
 Exemplo:
 
 ```elixir
-Enum.shuffle([1,2,3])
+Enum.shuffle([1, 2, 3, 4, 5, 6])
 ```
 
 Ou alteram o estado geral do sistema.
 
-
 ## A BEAM
 
-- [Introduction to Erlang](https://serokell.io/blog/introduction-to-erlang)
+* [Introduction to Erlang](https://serokell.io/blog/introduction-to-erlang)
 
 ## Casamento de padrões (pattern matching)
 
-- //Joker//
-- //Pin//
-- lado esquerdo vs. lado direito
+* *Joker*
+* *Pin*
+* lado esquerdo vs. lado direito
+
+```elixir
+peso = 100
+altura = 1.85
+
+100 = peso
+
+{peso, altura} = {120, 1.75}
+
+{_, mensagem} = {:ok, "Deu tudo certo"}
+```
+
+```elixir
+peso
+```
+
+```elixir
+altura
+```
+
+```elixir
+mensagem
+```
 
 ## Sintaxe amigável (ex. omissão de parênteses)
 
+```elixir
+IO.puts("Adolfo")
+```
+
 ## O Operador Pipe
+
+```elixir
+[10, 30, 20, 8]
+|> Enum.map(fn x -> x * 2 end)
+|> Enum.sort(fn x, y -> x > y end)
+|> Enum.sum()
+```
 
 ## Funções de Ordem Superior
 
+```elixir
+f = fn x -> fn y -> x + y end end
+```
+
+```elixir
+g = f.(5)
+```
+
+```elixir
+g.(10)
+```
+
 ## Final
 
-- Responder as perguntas do início
-  - Elixir é brasileira? [É uma linguagem globalizada](https://youtu.be/e335dWkFyUU)
-  - Como se pronuncia Elixir? ["Não importa, o importante é que você chame"](https://youtu.be/e335dWkFyUU)
+* Responder as perguntas do início
+  * Elixir é brasileira? [É uma linguagem globalizada](https://youtu.be/e335dWkFyUU)
+  * Como se pronuncia Elixir? ["Não importa, o importante é que você chame"](https://youtu.be/e335dWkFyUU)
 
 ### Acompanhe a comunidade
 
