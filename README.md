@@ -2,4 +2,5 @@
 
 Repositório com resumos e roteiros de palestras introduzindo Elixir.
 
-[SABER UFPR 2021](./2021/SABER_UFPR.md)
+Ver [playlist no Youtube](https://www.youtube.com/playlist?list=PLF5ttO8F-IsT42x53iFxOhmY70AWf-nd6).
+
