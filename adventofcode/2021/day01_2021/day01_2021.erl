@@ -3,6 +3,9 @@
 -export([depth_measurement_increases/1,
          depth_measurement_increases_from_sliding_windows/1, main/0]).
 
+% This is a solution to Advent of Code 2021 - Day 1
+% https://adventofcode.com/2021/day/1
+
 %% TASK 1
 depth_measurement_increases(InputString) ->
     ListOfNumbers = convert_long_string_to_numbers(InputString),
