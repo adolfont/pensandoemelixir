@@ -5,6 +5,8 @@
 
 % This is a solution to Advent of Code 2021 - Day 1
 % https://adventofcode.com/2021/day/1
+% 
+% Twitter thread https://twitter.com/adolfont/status/1465995096407556097
 
 %% TASK 1
 depth_measurement_increases(InputString) ->
