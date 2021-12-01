@@ -1,41 +1,13 @@
 # Elixir Extra com José Valim
 
-Link para o vídeo:
+Link para o vídeo: https://www.youtube.com/watch?v=QJiLO5G3xJs&t=11913s
 
 ## Transcrição (aos poucos sendo feita)
 
 
-E aí
 
-E aí
-
-E aí estamos de volta também
-
-tudo bem com alegria que alegria gente
-
-olha estou muito estou muito animada com
-
-isso aqui acho que é uma dessa atrás das
-
-atrações mais aguardadas no dia essa é
-
-esse momento agora é eu nem nem Como
-
-alongar muito porque eu quero dar o
-
-máximo de tempo possível para o
-
-professor a dor for
-
-aproveitar então Professor pode fazer as
-
-honras pode trazer a sua turma fica à
-
-vontade fica em casa então muito
-
-obrigado João obrigado OLX Brasil por
-
-essa oportunidade como
+Então muito obrigado, João. Obrigado, Elixir Brasil por
+ essa oportunidade como
 
 acredito que alguns de vocês sabem
 
