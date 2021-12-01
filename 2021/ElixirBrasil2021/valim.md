@@ -4,30 +4,35 @@ Link para o vídeo: https://www.youtube.com/watch?v=QJiLO5G3xJs&t=11913s
 
 ## Transcrição (aos poucos sendo feita)
 
+Adolfo Neto (AN)
+
+CG
+
+MP
+
+HT
 
 
-Então muito obrigado, João. Obrigado, Elixir Brasil por
- essa oportunidade como
+JV
 
-acredito que alguns de vocês sabem
 
-talvez todos talvez não eu faço parte do
 
-podcast a lixeira em Foco o podcast da
+AN: Então muito obrigado, João. Obrigado, Elixir Brasil por
+essa oportunidade. Como
+acredito que alguns de vocês sabem,
+talvez todos, talvez não, eu faço parte do
+podcast Elixir em Foco, o podcast da
+comunidade brasileira de Elixir e eu
+tenho comigo a Cristine Guadelupe.
+Cadê a  Cristine?
+Matheus Pessanha
+Tudo bem, Cristine? 
 
-comunidade Brasileira de elixir e eu
+CG: Tudo bem, oi pessoal, bom dia, boa tarde.
 
-tenho comigo a Cristina e Guadalupe
+AN: Boa tarde. Tudo bem, Matheus?
 
-é de Christine
-
-é Matheus Peçanha
-
-Olá tudo bem Cristiane tudo bem aí
-
-pessoal um dia boa tarde boa tarde tudo
-
-bem Mateus Boa tarde tudo bem e Hermínio
+MP: Boa tarde. Tudo bem e Hermínio
 
 Torres tudo bem Oi tudo bem Boa tarde
 
