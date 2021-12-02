@@ -23,15 +23,12 @@ solve_part2(Input) ->
 
 solve_part2([], H, V, _A) ->
     H * V;
-solve_part2([Head | Tail], H, V, A) ->
-    case Head of
-        {forward, X} ->
-            solve_part2(Tail, H + X, V + A * X, A);
-        {up, X} ->
-            solve_part2(Tail, H, V, A - X);
-        {down, X} ->
-            solve_part2(Tail, H, V, A + X)
-    end.
+solve_part2([{forward, X} | Tail], H, V, A) ->
+    solve_part2(Tail, H + X, V + A * X, A);
+solve_part2([{up, X} | Tail], H, V, A) ->
+    solve_part2(Tail, H, V, A - X);
+solve_part2([{down, X} | Tail], H, V, A) ->
+    solve_part2(Tail, H, V, A + X).
 
 parse(String) ->
     [command(S) || S <- string:split(String, [$\n], all), S =/= ""].
