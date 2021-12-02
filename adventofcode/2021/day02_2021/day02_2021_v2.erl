@@ -2,7 +2,7 @@
 
 -export([main/0]).
 
-% erlc day02_2021_v2.erl && cat micro.txt | erl -noshell -s day02_2021_v2 main
+% erlc day02_2021_v2.erl && cat input.txt | erl -noshell -s day02_2021_v2 main
 
 % See "erl -noshell" here https://www.erlang.org/faq/how_do_i.html#idm600
 main() ->
