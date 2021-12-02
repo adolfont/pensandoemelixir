@@ -11,15 +11,12 @@ solve_part1(Input) ->
 
 solve_part1([], H, V) ->
     H * V;
-solve_part1([Head | Tail], H, V) ->
-    case Head of
-        {forward, X} ->
-            solve_part1(Tail, H + X, V);
-        {up, X} ->
-            solve_part1(Tail, H, V - X);
-        {down, X} ->
-            solve_part1(Tail, H, V + X)
-    end.
+solve_part1([{forward, X} | Tail], H, V) ->
+    solve_part1(Tail, H + X, V);
+solve_part1([{up, X} | Tail], H, V) ->
+    solve_part1(Tail, H, V - X);
+solve_part1([{down, X} | Tail], H, V) ->
+    solve_part1(Tail, H, V + X).
 
 solve_part2(Input) ->
     solve_part2(parse(Input), 0, 0, 0).
