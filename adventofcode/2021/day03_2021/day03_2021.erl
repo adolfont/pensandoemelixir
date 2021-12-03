@@ -34,7 +34,7 @@ calculate_numbers(F, MostCommon) ->
     trunc(Result).
 
 zero_counter(String, Accumulator) ->
-    Count = lists:map(fun(X) -> 49 - X end, String),
+    Count = lists:map(fun(X) -> $1 - X end, String),
     lists:map(fun({X, Y}) -> X + Y end, lists:zip(Count, Accumulator)).
 
 % PART 2
