@@ -40,18 +40,19 @@ zero_counter(String, Accumulator) ->
 % PART 2
 %
 solve_part2(List) ->
-    list_to_integer(calc_O2_rating(List), 2) * list_to_integer(calc_scruber_rating(List), 2).
+    list_to_integer(calc_O2_rating(List), 2) 
+    * list_to_integer(calc_scruber_rating(List), 2).
 
 calc_O2_rating(List) ->
     calc_O2_rating(List, 1).
 
 calc_O2_rating([OneValue], _Index) ->
     OneValue;
-calc_O2_rating(List, Index) ->
-    % divides into two groups
-    {StartsWithZero, StartsWithOne} =
-        lists:partition(fun(Str) -> lists:nth(Index, Str) == hd("0") end, List),
-    calc_O2_rating(next_list(StartsWithZero, StartsWithOne), Index + 1).
+calc_O2_rating(List, Index) ->   
+    % divides into two groups  
+    {WithZero, WithOne} =
+        lists:partition(fun(Str) -> lists:nth(Index, Str) == $0 end, List),
+    calc_O2_rating(next_list(WithZero, WithOne), Index + 1).
 
 calc_scruber_rating(List) ->
     calc_scruber_rating(List, 1).
@@ -60,9 +61,9 @@ calc_scruber_rating([OneValue], _Index) ->
     OneValue;
 calc_scruber_rating(List, Index) ->
     % divides into two groups
-    {StartsWithZero, StartsWithOne} =
-        lists:partition(fun(Str) -> lists:nth(Index, Str) == hd("0") end, List),
-    calc_scruber_rating(next_list_v2(StartsWithZero, StartsWithOne), Index + 1).
+    {WithZero, WithOne} =
+        lists:partition(fun(Str) -> lists:nth(Index, Str) == $0 end, List),
+    calc_scruber_rating(next_list_v2(WithZero, WithOne), Index + 1).
 
 next_list(List1 = [_], []) ->
     List1;
@@ -126,6 +127,7 @@ part1_test() ->
     ?assertEqual(6, calculate_numbers(fun bool/1, [true, true, false])),
     ?assertEqual([0, 0, 0], zero_counter("111", [0, 0, 0])),
     ?assertEqual([0, 1, 0], zero_counter("101", [0, 0, 0])),
+    ?assertEqual([1, 3, 4], zero_counter("100", [1, 2, 3])),
     ?assertEqual(198, solve_part1(processed_input())),
     ?assertEqual(1092896, solve_part1(processed_input("input.txt"))).
 
