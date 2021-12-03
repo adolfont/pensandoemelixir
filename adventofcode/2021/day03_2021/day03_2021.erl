@@ -59,8 +59,8 @@ input(InputFileName) ->
 
 part1_test() ->
     ?assertEqual("11011", command("11011")),
-    % ?assertEqual(["00100","11110","10110","10111","10101","01111","00111",
-    % "11100","10000", "11001", "00010", "01010"], parse(input())),
+    ?assertEqual(["00100","11110","10110","10111","10101","01111","00111",
+    "11100","10000", "11001", "00010", "01010"], parse(input())),
     ?assertEqual([0, 0, 0], zero_counter("111", [0, 0, 0])),
     ?assertEqual([0, 1, 0], zero_counter("101", [0, 0, 0])),
     ?assertEqual(198, solve_part1(input())),
