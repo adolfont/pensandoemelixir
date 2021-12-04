@@ -206,6 +206,8 @@ find_bingo_number_test() ->
     ?assertEqual({24, [14, 21, 17, 24, 4]}, {Number, Line}).
 
 part1_test() ->
+    ?assertEqual(16, part1(read_input("test_input_3.txt"))),
+    ?assertEqual(14, part1(read_input("test_input_4.txt"))),
     ?assertEqual(4512, part1(read_input("input_from_description.txt"))),
     ?assertEqual(64084, part1(read_input("input.txt"))).
 
