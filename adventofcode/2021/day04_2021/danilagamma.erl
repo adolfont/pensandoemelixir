@@ -6,8 +6,6 @@
 -export([main/0]).
 
 main() ->
-    % main("test_input_3.txt"),
-    % main("test_input_4.txt"),
     main("input_from_description.txt"),
     main("input.txt").
 
