@@ -5,23 +5,9 @@
 
 % erlc -DTEST day04_2021.erl && erl -noshell -pa . -eval "eunit:test(day04_2021, [verbose])" -s init stop
 
--export([transpose/1]).
+-export([find_bingo_number_2/2, read_input/1, sum_unmarked/2]).
 
 %%% HELPER FUNCTIONS
-
-% parse(String) ->
-%     [command(S) || S <- string:split(String, [$\n], all), S =/= ""].
-
-% command(S) ->
-%     string:trim(S).
-
-% processed_input() ->
-%     parse(input()).
-
-% processed_input(InputFileName) ->
-%     parse(input(InputFileName)).
-
-%% PART 1
 
 mark_number(Map = #{numbers := []}) ->
     Map;
@@ -84,6 +70,62 @@ sum_unmarked_line(Line) ->
     lists:sum(
         lists:filter(fun is_integer/1, Line)).
 
+%% Part 2
+
+% find_bingo_number_2/2
+% the first argument is the map with numbers and boards (matrices)
+% the second argument is the current list of solutions
+% 1. it marks the first number on all boards
+% 2. it gets the Matrices from the new map
+% 3. it calls find_bingo_number_2_aux/4 with
+%   a) a list containing only false or a list containing a line/row that allows you to say bingo!
+%   b) the NewMap
+%   c) the latest number used (which is not on NewMap anymore)
+%   d) an empty list of solutions
+find_bingo_number_2(Map = #{numbers := [LatestNumber | _]}, Solutions) ->
+    NewMap = mark_number(Map),
+    #{matrices := Matrices} = NewMap,
+    find_bingo_number_2_aux(lists:filter(fun(X) -> X =/= false end,
+                                         [bingo(Matrix) || Matrix <- Matrices]),
+                            NewMap,
+                            LatestNumber,
+                            Solutions);
+find_bingo_number_2(_Map, Solutions) ->
+    Solutions.
+
+% find_bingo_number_2_aux/4
+% this is the stop clause
+% when there are no more matrices, you return the solutions
+find_bingo_number_2_aux(_, #{matrices := []}, _, Solutions) ->
+    Solutions;
+% this is the start/continue clause
+% the first argument are the new solutions that allow you to say bingo!
+% the second argument is the current map
+% the third argument is the latest number that created the solutions
+% the fourth argument are the current solutions
+% if I have solutions,
+% I remove the matrices(boards) that were solved from the Matrices
+% I add the new solutions to the current solutions
+% And I call find_bingo_number_2_aux/4 recursively
+% with the NewMap
+find_bingo_number_2_aux(Solutions,
+                        Map = #{matrices := Matrices},
+                        LatestNumber,
+                        CurSolutions)
+    when [] =/= Solutions ->
+    GetMatrix = fun({_, _, X}) -> X end,
+    MatricesToDelete = [GetMatrix(S) || S <- Solutions],
+    GetSolution = fun(Y) -> {LatestNumber, Y} end,
+    SolutionsToAdd = [GetSolution(S) || S <- Solutions],
+    NewMap = Map#{matrices => lists:subtract(Matrices, MatricesToDelete)},
+    find_bingo_number_2(NewMap, SolutionsToAdd ++ CurSolutions);
+find_bingo_number_2_aux([], Map, _LatestNumber, Solutions) ->
+    find_bingo_number_2(Map, Solutions).
+
+part2(Map) ->
+    {LatestNumber, {true, _, Matrix}} = hd(find_bingo_number_2(Map, [])),
+    LatestNumber * sum_unmarked(Matrix, 0).
+
 %% HELPER FUNCTIONS
 
 % Source: https://stackoverflow.com/questions/5389254/transposing-a-2-dimensional-matrix-in-erlang
@@ -122,8 +164,6 @@ read_input_test() ->
                    numbers => [7, 4, 9]},
                  read_input("test_input.txt")).
 
-    % ?assertEqual(#{}, read_input("input_from_description.txt")).
-
 mark_test() ->
     ?assertEqual({1, marked}, mark(1, 1)),
     ?assertEqual(1, mark(1, 2)).
@@ -161,5 +201,16 @@ find_bingo_number_test() ->
 part1_test() ->
     ?assertEqual(4512, part1(read_input("input_from_description.txt"))),
     ?assertEqual(64084, part1(read_input("input.txt"))).
+
+find_bingo_number_2_test() ->
+    ?assertEqual({1, {true, [1, 2], [[22, 13], [{1, marked}, {2, marked}]]}},
+                 hd(find_bingo_number_2(read_input("test_input_3.txt"), []))).
+
+part2_test() ->
+    ?assertEqual(35, part2(read_input("test_input_3.txt"))),
+    ?assertEqual(230, part2(read_input("test_input_4.txt"))),
+
+    ?assertEqual(1924, part2(read_input("input_from_description.txt"))),
+    ?assertEqual(12833, part2(read_input("input.txt"))).
 
 -endif.
