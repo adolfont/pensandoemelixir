@@ -7,7 +7,7 @@
 
 -export([find_bingo_number_2/2, read_input/1, sum_unmarked/2]).
 
-%%% HELPER FUNCTIONS
+%%% HELPER FUNCTIONS FOR BOTH PARTS
 
 mark_number(Map = #{numbers := []}) ->
     Map;
@@ -44,6 +44,8 @@ clean(Line) ->
 bingo_line(Line) ->
     lists:all(fun(X) -> is_tuple(X) end, Line).
 
+%%% PART 1
+
 find_bingo_number(Map = #{numbers := [LatestNumber | _]}) ->
     NewMap = mark_number(Map),
     #{matrices := Matrices} = NewMap,
@@ -70,8 +72,11 @@ sum_unmarked_line(Line) ->
     lists:sum(
         lists:filter(fun is_integer/1, Line)).
 
-%% Part 2
+%%% PART 2
 
+% I wrote the following comments to try to understand what I was doing.
+% I am not sure they reflect the code.
+%
 % find_bingo_number_2/2
 % the first argument is the map with numbers and boards (matrices)
 % the second argument is the current list of solutions
@@ -126,7 +131,7 @@ part2(Map) ->
     {LatestNumber, {true, _, Matrix}} = hd(find_bingo_number_2(Map, [])),
     LatestNumber * sum_unmarked(Matrix, 0).
 
-%% HELPER FUNCTIONS
+%% GENERAL HELPER FUNCTIONS
 
 % Source: https://stackoverflow.com/questions/5389254/transposing-a-2-dimensional-matrix-in-erlang
 transpose([[] | _]) ->
@@ -150,6 +155,8 @@ read_input(InputFileName) ->
     [NumbersLine | Matrices] = PartsOfTheInput,
     #{numbers => read_numbers_line(NumbersLine, $,),
       matrices => lists:map(fun read_matrix/1, Matrices)}.
+
+%%% TESTS
 
 -ifdef(EUNIT).
 
