@@ -74,7 +74,7 @@ all_pairs_2_aux({{X1, Y1}, {X2, _Y2}}) ->
 range(X, Y) when X < Y ->
     lists:seq(X, Y);
 range(X, Y) ->
-    lists:seq(Y, X).
+    lists:seq(X, Y, -1).
 
 processed_input(InputFileName) ->
     parse(input(InputFileName)).
