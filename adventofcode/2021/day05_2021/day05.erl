@@ -24,12 +24,12 @@ lazy_part_1(Filename) ->
     % io:format("~p~n", [all_pairs({{5,9}, {0,9}})]).
     % io:format("All pairs generated from file:~n ~p~n",
     %       [generate_all_pairs(processed_input(Filename))]),
-    io:format("Resut: ~p~n",
+    io:format("Result: ~p~n",
               [length(generate_all_pairs(fun all_pairs/1, processed_input(Filename)))]).
 
 lazy_part_2(Filename) ->
     io:format("Filename: ~p~n", [Filename]),
-    io:format("Resut: ~p~n",
+    io:format("Result: ~p~n",
               [length(generate_all_pairs(fun all_pairs_2/1, processed_input(Filename)))]).
 
 generate_all_pairs(F, List) ->

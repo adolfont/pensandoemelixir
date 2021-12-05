@@ -1,0 +1,10 @@
+Part 1
+Filename: "input_from_description.txt"
+Result: 5
+Filename: "input.txt"
+Result: 8060
+Part 2
+Filename: "input_from_description.txt"
+Result: 12
+Filename: "input.txt"
+Result: 21577
