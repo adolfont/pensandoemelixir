@@ -7,12 +7,12 @@
 % Much more efficient than my code.
 
 -export([main/0]).
+-compile(export_all).
+
 
 main() ->
     main("input_from_description.txt"),
     main("input.txt").
-
-
 
 main(File) ->
     Data = parse_file(file:read_file(File)),

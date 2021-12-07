@@ -59,15 +59,19 @@ position_fuel_2(Position, Data) ->
   {Position,
    lists:foldl(fun(X, Accum) -> Accum + fuel_consumption(Position, X) end, 0, Data)}.
 
-fuel_consumption(Position1, Position2) when Position1 > Position2 ->
-  fuel_consumption(Position2, Position1);
 fuel_consumption(Position1, Position2) ->
-  fuel_consumption(Position1, Position2, 0, 1).
+  X = abs(Position1 - Position2),
+  X * (1 + X) div 2.
 
-fuel_consumption(Position, Position, Total, _Counter) ->
-  Total;
-fuel_consumption(Position1, Position2, Total, Counter) ->
-  fuel_consumption(Position1 + 1, Position2, Total + Counter, Counter + 1).
+% fuel_consumption(Position1, Position2) when Position1 > Position2 ->
+%   fuel_consumption(Position2, Position1);
+% fuel_consumption(Position1, Position2) ->
+%   fuel_consumption(Position1, Position2, 0, 1).
+
+% fuel_consumption(Position, Position, Total, _Counter) ->
+%   Total;
+% fuel_consumption(Position1, Position2, Total, Counter) ->
+%   fuel_consumption(Position1 + 1, Position2, Total + Counter, Counter + 1).
 
 parse_file({ok, RawData}) ->
   [binary_to_integer(Value) || Value <- re:split(RawData, "[,\n]+"), Value =/= <<>>];
