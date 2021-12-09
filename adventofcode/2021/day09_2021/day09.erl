@@ -13,21 +13,54 @@
 
 -export([main/0]).
 
--compile(export_all).
-
 -ifdef(EUNIT).
 
 -endif.
 
 main() ->
     main("input_from_description.txt"),
-
     main("input.txt").
 
 main(File) ->
     Data = parse_file(file:read_file(File)),
 
-    io:format("Part 1 for ~p: ~p~n", [File, part1(Data)]).
+    io:format("Part 1 (9, 514) for ~p: ~p~n", [File, part1(Data)]),
+    io:format("Part 2 (1134, 1103130) for ~p: ~p~n", [File, part2(Data)]).
+
+part2(Data) ->
+    Basins = [lists:sort(X) || X <- find_three_largest_basins(Data)],
+    [B1, B2, B3 | _] =
+        lists:sort(fun(X, Y) -> length(X) > length(Y) end, remove_dups(Basins)),
+    LBasins = [length(X) || X <- [B1, B2, B3]],
+    lists:foldl(fun(X, Y) -> X * Y end, 1, LBasins).
+
+remove_dups([]) ->
+    [];
+remove_dups([H | T]) ->
+    [H | [X || X <- remove_dups(T), X /= H]].
+
+find_three_largest_basins(Data) ->
+    find_three_largest_basins(create_map(Data), length(Data), length(hd(Data)), []).
+
+find_three_largest_basins(Map, Lines, Columns, _ThreeLargest) ->
+    [basin_size({Line, Column}, Map, [])
+     || Line <- lists:seq(1, Lines), Column <- lists:seq(1, Columns)].
+
+basin_size({Line, Column}, Map, Basin) ->
+    Value = maps:get({Line, Column}, Map, $9),
+    case (Value =/= $9) and not lists:member({Line, Column}, Basin) of
+        true ->
+            basin_size_rec({Line, Column}, Map, [{Line, Column} | Basin]);
+        false ->
+            Basin
+    end.
+
+basin_size_rec({Line, Column}, Map, Basin) ->
+    B2 = basin_size({Line - 1, Column}, Map, Basin),
+    B3 = basin_size({Line + 1, Column}, Map, B2),
+    B4 = basin_size({Line, Column - 1}, Map, B3),
+    B5 = basin_size({Line, Column + 1}, Map, B4),
+    B5.
 
 part1(Data) ->
     LowPoints = find_low_points(Data),
