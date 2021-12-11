@@ -2,7 +2,7 @@
 
 -include_lib("eunit/include/eunit.hrl").
 
-% Problem: https://adventofcode.com/2021/day/8
+% Problem: https://adventofcode.com/2021/day/10
 %
 % erlc -DTEST day10.erl && erl -noshell -pa . -eval "eunit:test(day10, [verbose])" -s init stop
 % OR
