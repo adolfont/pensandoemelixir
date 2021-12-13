@@ -19,23 +19,52 @@
 
 main() ->
   main("input_from_description.txt"),
-  main("small_input.txt"),
-
+  % main("small_input.txt"),
   main("input.txt").
 
 main(File) ->
   Data = parse_file(file:read_file(File)),
 
-  io:format("Part 1 (?, ?) for ~p: ~n~p~n", [File, part1(Data)]).
+  io:format("Part 1 (17, 790) for ~p: ~n~p~n", [File, part1(Data)]),
+  io:format("Part 2 (O, PGHZBFJC) for ~p: ~n~p~n", [File, part2(Data)]).
 
 part1(Data) ->
   {Points, FoldingInstructions} = Data,
   % io:format("Points sorted by Y~n~p~n", [lists:sort(fun sorter/2, Points)]),
   % io:format("Points sorted by X~n~p~n", [lists:sort(Points)]),
-  length(lists:sort(fun sorter/2, apply_fold(hd(FoldingInstructions), Points))).
+  length(apply_fold(hd(FoldingInstructions), Points)).
 
-sorter({X1, Y1}, {X2, Y2}) ->
-  (Y1 < Y2) or (Y1 =:= Y2) and (X1 < X2).
+% sorter({X1, Y1}, {X2, Y2}) ->
+%   (Y1 < Y2) or (Y1 =:= Y2) and (X1 < X2).
+
+part2(Data) ->
+  {Points, FoldingInstructions} = Data,
+  draw(part2(FoldingInstructions, Points)).
+
+draw(Points) ->
+  M = maps:from_list(Points),
+  MaxX =
+    lists:max(
+      maps:keys(M)),
+  MaxY =
+    lists:max(
+      maps:values(M)),
+  {MaxX, MaxY},
+  NewMap = maps:from_list([{P, 1} || P <- Points]),
+  [[char(X, Y, NewMap) || X <- lists:seq(0, MaxX)] || Y <- lists:seq(0, MaxY)].
+
+char(X, Y, Map) ->
+  case maps:get({X, Y}, Map, 0) of
+    1 ->
+      $x;
+    0 ->
+      $.
+  end.
+
+part2([], Points) ->
+  Points;
+part2([Head | Tail], Points) ->
+  part2(Tail, apply_fold(Head, Points)).
 
 apply_fold({"y", Num}, Points) ->
   NewPoints = [{PX, 2 * Num - PY} || {PX, PY} <- Points, PY > Num],
