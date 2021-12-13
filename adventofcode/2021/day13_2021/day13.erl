@@ -30,12 +30,7 @@ main(File) ->
 
 part1(Data) ->
   {Points, FoldingInstructions} = Data,
-  % io:format("Points sorted by Y~n~p~n", [lists:sort(fun sorter/2, Points)]),
-  % io:format("Points sorted by X~n~p~n", [lists:sort(Points)]),
   length(apply_fold(hd(FoldingInstructions), Points)).
-
-% sorter({X1, Y1}, {X2, Y2}) ->
-%   (Y1 < Y2) or (Y1 =:= Y2) and (X1 < X2).
 
 part2(Data) ->
   {Points, FoldingInstructions} = Data,
@@ -74,25 +69,10 @@ apply_fold({"x", Num}, Points) ->
   create_new_board_X(NewPoints, Points, Num).
 
 create_new_board(NewPoints, Points, Num) ->
-  % lists:usort(NewPoints
-  %             ++ [{PX, max(PY, value({PX, PY}, NewPoints))} || {PX, PY} <- Points, PY < Num]).
   lists:usort(NewPoints ++ [{PX, PY} || {PX, PY} <- Points, PY < Num]).
 
 create_new_board_X(NewPoints, Points, Num) ->
-  % lists:usort(NewPoints
-  %                   ++ [{max(PX, value({PX, PY}, NewPoints)), PY}
-  %                   || {PX, PY} <- Points, PX < Num]).
   lists:usort(NewPoints ++ [{PX, PY} || {PX, PY} <- Points, PX < Num]).
-
-% value({X, Y}, Points) ->
-%   value(lists:member({X, Y}, Points)).
-
-% value(true) ->
-%   1;
-% value(false) ->
-%   0.
-
-  % lists:foldl(fun(Point, Accu) -> Accu#{Point => 1} end, #{}, Points).
 
 parse_file({ok, RawData}) ->
   {Points, FoldingInstructions} =
