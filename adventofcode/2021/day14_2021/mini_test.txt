@@ -1,0 +1,5 @@
+ABCD
+
+AB -> C
+CB -> A
+CD -> A
