@@ -1,0 +1,4 @@
+NNCB
+
+CH -> B
+HH -> N
