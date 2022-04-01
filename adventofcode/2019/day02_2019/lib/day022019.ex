@@ -12,8 +12,6 @@ defmodule Day022019 do
   end
 
   def process_instruction(map, position) do
-    # IO.puts("Instrução: #{map[position]}")
-
     cond do
       map[position] == 99 ->
         map
