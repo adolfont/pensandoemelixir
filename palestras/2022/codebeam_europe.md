@@ -181,25 +181,44 @@ Access [https://exercism.org/]()https://exercism.org/
 Private link:
 https://exercism.org/mentoring/discussions/ad416ef10f1e42b4b97445f2ee672f53
 
+
+---
+
+![bg 60%](img/mentoring.png) 
+
+
+---
+
+![bg 80%](img/mentoring2.png) 
+
+---
+
+![bg 65%](img/mentoring3.png) 
+
 ---
 
 # José Valim and the Advent of Code
 
-- https://www.twitch.tv/josevalim
+- [José Valim's Twitch: 2018 and 2021](https://www.twitch.tv/josevalim)
 
-- https://www.youtube.com/playlist?list=PLNP8vc86_-SOV1ZEvX_q9BLYWL586zWnF
+- [Sekun's YouTube playlist with shorter, edited versions of Valim's videos](https://www.youtube.com/playlist?list=PLNP8vc86_-SOV1ZEvX_q9BLYWL586zWnF)
+  - [Support SEKUN](https://ko-fi.com/sekun)
+
+---
+  
+![](img/sekun.png) 
 
 ---
 
 # Good/bad in AoC
 
 - What's good about AoC?
-    - community
+    - Community (Twitter, Elixir Forum and Erlang Forums)
 - What is "bad" in AoC?
-    - weekend
-    - December!
-    - Some challenges require a lot of prior knowledge (programming competitions)
-    - a stimulus to write unreadable code?
+    - Weekends! _But [SpawnFest](https://spawnfest.org/) too :)_
+    - December! _Spring/Summer in the Southern Hemisphere_
+    - Some challenges require (a lot of) prior knowledge (programming competitions)
+    - Is there a stimulus to write unreadable code?
 
 ---
 
@@ -211,7 +230,41 @@ https://exercism.org/mentoring/discussions/ad416ef10f1e42b4b97445f2ee672f53
     - automatic feedback
 - What is "bad" in Exercism?
     - the tests are already there
-    - v3 kind of discourages mentoring
+       - It is impossible to do TDD
+    - v3 kind of discourages mentoring (debatable)
+
+---
+
+# What have I learned? 1/3
+
+- Use of Enum (Valim) #aoc #elixir
+	- _There's an Enum function for that!_
+- Lots of pipes!
+
+- Functions with the same name but different arity, one being public and the other private #erlang #exercism
+- Various uses of [list comprehension](https://www.erlang.org/doc/programming_examples/list_comprehensions.html):
+
+`[command(S) || S <- string:split(String, [$\n], all), S =/= ""].`
+
+![bg 100% right:10%](img/cat.png) 
+
+--- 
+# What have I learned? 2/3
+
+- [case](https://github.com/adolfont/pensandoemelixir/blob/main/adventofcode/2021/day02_2021/day02_2021_v2.erl) #erlang #aoc
+
+![](img/case.png) 
+- [read, understand and run code from others](https://github.com/adolfont/pensandoemelixir/blob/main/adventofcode/2021/day04_2021/danilagamma.erl) #erlang #aoc
+
+![bg 100% right:10%](img/cat3.png) 
+
+--- 
+# What have I learned? 2/3
+
+- [re:split](https://github.com/adolfont/pensandoemelixir/blob/main/adventofcode/2021/day14_2021/day14.erl)
+![](img/resplit.png) 
+
+![bg 100% right:10%](img/cat2.png) 
 
 ---
 
@@ -233,19 +286,6 @@ https://exercism.org/mentoring/discussions/ad416ef10f1e42b4b97445f2ee672f53
 - Look at other people's solutions
 - Share your solution on the platform
 
----
-
-# What have I learned?
-
-- Use of Enum (Valim) #aoc #elixir
-- Functions with the same name but different arity, one being public and the other private #erlang #exercism
-- various uses of [list comprehension](https://www.erlang.org/doc/programming_examples/list_comprehensions.html):
-`[command(S) || S <- string:split(String, [$\n], all), S =/= ""].`
-- [case](https://github.com/adolfont/pensandoemelixir/blob/main/adventofcode/2021/day02_2021/day02_2021_v2.erl) #erlang #aoc
-- [read, understand and run code from others](https://github.com/adolfont/pensandoemelixir/blob/main/adventofcode/2021/day04_2021/danilagamma.erl) #erlang #aoc
-- [re:split](https://github.com/adolfont/pensandoemelixir/blob/main/adventofcode/2021/day14_2021/day14.erl)
-
-https://github.com/adolfont/pensandoemelixir/tree/main/adventofcode
 
 ---
 
@@ -253,6 +293,10 @@ https://github.com/adolfont/pensandoemelixir/tree/main/adventofcode
 
 - "Sharpen the Saw" (Habit 7 - Sharpen the Saw)
 - Exercise to stay in shape
+
+---
+
+# Announcements
 
 ---
 
