@@ -1,13 +1,12 @@
-<!-- size: 16:9 -->
-<!--
+--- 
+mapr: true
+size: 16:9
 theme: default
 paginate: true
--->
-<!-- 
 backgroundColor: lightpink 
 header: 'Learning Elixir and Erlang with Advent of Code and Exercism: advantages and challenges'
 footer: 'Adolfo Neto (UTFFPR)'
--->
+---
 
 # Learning Elixir and Erlang with Advent of Code and Exercism: advantages and challenges
 
@@ -18,10 +17,10 @@ footer: 'Adolfo Neto (UTFFPR)'
 
 ![w:200 h:200](img/qr.png)
 
-<!-- https://twitter.com/TheErlef/status/1526616037684281344 -->
 
 ![bg 100% right:10%](img/cbl2.png)
 
+<!-- First slide --> 
 ---
 
 # Presentation script
@@ -31,6 +30,8 @@ footer: 'Adolfo Neto (UTFFPR)'
 - What is Exercism?
 - What is good/bad in AoC/Exercism?
 - **How ​​to use AoC and/or Exercism to learn Erlang and/or Elixir?**
+
+<!-- Script --> 
 
 ---
 
@@ -42,6 +43,8 @@ footer: 'Adolfo Neto (UTFFPR)'
 - Member of the [Education, Training, & Adoption Working Group of the Erlang Ecosystem Foundation](https://erlef.org/wg/education)
 - [YouTube EN](https://www.youtube.com/c/ElixirErlangandtheBEAMwithAdolfoNeto), [YouTube PT](https://youtube.com/c/AdolfoNeto), [Instagram](http://instagram.com/adolfont), [Telegram](http://t.me/adolfont), [GitHub](http://github.com/adolfont), [Twitch](http://twitch.tv/adolfont), [TikTok](https://www.tiktok.com/@adolfont)...
 
+<!-- Too many things... Open to work? --> 
+
 ---
 
 # Which are the difficulties in learning Elixir and Erlang?
@@ -52,6 +55,10 @@ footer: 'Adolfo Neto (UTFFPR)'
   - Syntax details
   - Not knowing the best practices of the communities
   - Concurrency/OTP (difficult by itself)
+  
+<!-- Pitfalls for all programming languages vs pitfalls specific to Elixir and/or Erlang --> 
+
+![bg 100% right:10%](img/cat.png) 
 
 ---
 
@@ -68,6 +75,8 @@ footer: 'Adolfo Neto (UTFFPR)'
 - Listening to [podcasts](https://github.com/elixir-lang/elixir/wiki/Podcasts-and-Screencasts) 
 - What else?
 
+![bg 100% right:10%](img/cat2.png) 
+
 ---
 
 ## What helps? (in my opinion)
@@ -82,13 +91,20 @@ footer: 'Adolfo Neto (UTFFPR)'
 
 "Have you ever solved an Advent of Code or an Exercism challenge?"
 
-"Have you ever solved a programming challenge from:"
 
+![w:908 h:293](img/sum.png)
 
-- [Twitter Poll](https://twitter.com/elixiremfoco/status/1510973616602722308)
+- Whova Poll!
+
+![bg 100% right:10%](img/cat3.png) 
+
+<!-- 
+- [Twitter Poll (PT)](https://twitter.com/elixiremfoco/status/1510973616602722308)
 - [Poll on Elixir Forum](https://elixirforum.com/t/have-you-ever-solved-an-advent-of-code-or-an-exercism-challenge/46985)
 - [Poll on Erlang Forums](https://erlangforums.com/t/have-you-ever-solved-an-advent-of-code-or-an-exercism-challenge/1285)
 - [Sum](https://docs.google.com/spreadsheets/d/1COt5PrCVjm7hnNTBWC27UI9FsVr_qYOkkocWNZE1T5I/edit?usp=sharing)
+
+-->
 
 ---
 
@@ -116,30 +132,47 @@ footer: 'Adolfo Neto (UTFFPR)'
 Where am I saving my solutions as of 2021
 https://github.com/adolfont/pensandoemelixir/tree/main/adventofcode/
 
+![bg 100% right:10%](img/cat4.png) 
+
 ---
 
 # Important!
 
-- Long description
+- Relatively long description (631, 577, 1002)
 - Pay close attention to the wording!
+  - [Day 2 Part 1 2019](https://adventofcode.com/2019/day/2)
+  - _"To do this, before running the program, replace position 1 with the value 12 and replace position 2 with the value 2."_
 - Undisclosed difficulty
-- Many ad-hoc solutions
-    - Example: [Day 2 Part 1 2019](https://adventofcode.com/2019/day/2)
+- Ad-hoc solutions
 
+<!-- "Ad hoc is a Latin phrase meaning literally 'to this'. In English, it typically signifies a solution for a specific purpose, problem, or task rather than a generalized solution adaptable to collateral instances. (Compare with a priori." https://en.wikipedia.org/wiki/Ad_hoc ) -->
+
+![bg 100% right:10%](img/cat5.png) 
+
+---
+
+![bg 50%](img/exercism1.png) 
+
+---
+
+![bg 90%](img/exercism2.png) 
 
 ---
 
 # What is Exercism?
 
-- Created by [Katrina Owen](https://www.kytrinyx.com/)
-    - read https://www.kytrinyx.com/exercism/ !!!
-    - and https://en.wikipedia.org/wiki/Exercism
+- Created by [Katrina Owen](https://archive.is/2MJ5F)
+    - read [https://www.kytrinyx.com/exercism/](http://web.archive.org/web/20210509192904/http://www.kytrinyx.com/exercism/) !!!
+    - and <https://en.wikipedia.org/wiki/Exercism>
 
 - Exercises + free mentoring
-- It gives you descriptions and tests in one language
+- It gives you short descriptions (72, 96, 172)
+- It provides you with tests for your programming language
 - Current version: version 3
 
-Access https://exercism.org/
+Access [https://exercism.org/]()https://exercism.org/
+
+![bg 100% right:10%](img/cat6.png) 
 
 ---
 
@@ -257,5 +290,13 @@ https://github.com/adolfont/pensandoemelixir/tree/main/adventofcode
 
 --- 
 
-# @adolfont
+## Adolfo Neto  [@adolfont on Twitter](http://twitter.com/adolfont)
 
+[adolfont.github.io](http://adolfont.github.io)
+
+![w:200 h:200](img/qr.png)
+
+[Slides](https://github.com/adolfont/pensandoemelixir/blob/main/palestras/2022/codebeam_europe.md)
+
+
+<!-- https://twitter.com/TheErlef/status/1526616037684281344 -->
