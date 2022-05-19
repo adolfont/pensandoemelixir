@@ -1,0 +1,1 @@
+while inotifywait -e close_write codebeam_europe.md; do ./compile; done

@@ -1,0 +1,3 @@
+npx @marp-team/marp-cli@latest codebeam_europe.md
+echo "Deu!"
+ 
