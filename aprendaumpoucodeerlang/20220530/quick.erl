@@ -1,6 +1,8 @@
 -module(quick).
-
 -export([quicksort/1, lc_quicksort/1, bestest_qsort/1]).
+
+
+% copied from https://learnyousomeerlang.com/static/erlang/recursive.erl
 
 quicksort([]) -> [];
 quicksort([Pivot|Rest]) ->
