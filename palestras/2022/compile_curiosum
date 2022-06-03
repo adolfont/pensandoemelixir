@@ -1,0 +1,4 @@
+npx @marp-team/marp-cli@latest adolfont_curiosum.md
+npx @marp-team/marp-cli@latest adolfont_curiosum.md -o adolfont_curiosum.pdf
+echo "Deu!"
+ 

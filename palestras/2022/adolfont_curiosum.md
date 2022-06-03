@@ -15,14 +15,10 @@ footer: 'Adolfo Neto (UTFFPR)'
 
 [adolfont.github.io](http://adolfont.github.io)
 
-![w:200 h:200](img/qr.png) 
-
-![bg 100% right:20%](img/cbac2.png)
+![w:200 h:200](img/qr.png)
 
 
-<!-- ![bg 100% right:10%](img/cbl2.png) -->
-
-
+![bg 100% right:20%](img/curiosum.png)
 
 <!-- First slide --> 
 ---
@@ -301,12 +297,18 @@ https://exercism.org/mentoring/discussions/ad416ef10f1e42b4b97445f2ee672f53
 
 # Announcements
 
+---
+
+
+# Code BEAM A Corunha
+
+[https://www.codebeamcorunha.es](https://www.codebeamcorunha.es)
+
+![height:12cm](img/cbac.png)
 
 ---
 
-# Code BEAM Brasil 2022
-
-Probably in September. Online.
+# Code BEAM Brasil
 
 [https://www.codebeambr.com/](https://www.codebeambr.com/)
 
@@ -314,10 +316,7 @@ Probably in September. Online.
 
 ---
 
-# Elixir Brasil 2022
-
-Probably in September. ???
-
+# Elixir Brasil
 
 [https://elixirbrasil.com/](https://elixirbrasil.com/)
 
@@ -329,8 +328,6 @@ Probably in September. ???
 # 10 Years of Elixir
 
 You can watch the recording!
-
-Laura Castro gave a testimonial!
 
 [https://bit.ly/10YearsOfElixir](https://bit.ly/10YearsOfElixir)
 
@@ -344,7 +341,7 @@ Laura Castro gave a testimonial!
 
 ![w:200 h:200](img/qr.png)
 
-[Slides](https://github.com/adolfont/pensandoemelixir/blob/main/palestras/2022/codebeam_europe.md)
+[Slides](https://github.com/adolfont/pensandoemelixir/blob/main/palestras/2022/adolfont_curiosum.md)
 
 
 <!-- https://twitter.com/TheErlef/status/1526616037684281344 -->

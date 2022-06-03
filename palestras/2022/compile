@@ -1,3 +1,4 @@
-npx @marp-team/marp-cli@latest codebeam_europe.md
+npx @marp-team/marp-cli@latest codebeam_a_coruna.md
+npx @marp-team/marp-cli@latest codebeam_a_coruna.md -o codebeam_a_coruna.pdf
 echo "Deu!"
  
