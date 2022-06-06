@@ -1,4 +1,4 @@
-npx @marp-team/marp-cli@latest codebeam_a_coruna.md
-npx @marp-team/marp-cli@latest codebeam_a_coruna.md -o codebeam_a_coruna.pdf
+npx @marp-team/marp-cli@latest codebeam_a_coruna.md --allow-local-files
+npx @marp-team/marp-cli@latest codebeam_a_coruna.md -o codebeam_a_coruna.pdf --allow-local-files
 echo "Deu!"
  

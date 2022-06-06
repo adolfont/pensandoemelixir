@@ -43,6 +43,13 @@ footer: 'Adolfo Neto (UTFFPR)'
 # Who am I?
 
 - Professor at the [Federal University of Technology – Parana (UTFPR)](http://www.utfpr.edu.br/english/about-utfpr/facts-and-figures)
+
+ ![h:250](img/utfpr.jpg) ![h:250](img/queijos.jpg) ![h:250](img/abraco.jpg)
+
+---  
+
+# Who am I? (part 2)
+
 - Co-host of [Elixir em Foco (Elixir in Focus)](https://www.elixiremfoco.com/) podcast (in Brazilian Portuguese)
 - Member of the [Education, Training, & Adoption Working Group of the Erlang Ecosystem Foundation](https://erlef.org/wg/education)
 - [YouTube EN](https://www.youtube.com/c/ElixirErlangandtheBEAMwithAdolfoNeto), [YouTube PT](https://youtube.com/c/AdolfoNeto), [Instagram](http://instagram.com/adolfont), [Telegram](http://t.me/adolfont), [GitHub](http://github.com/adolfont), [Twitch](http://twitch.tv/adolfont), [TikTok](https://www.tiktok.com/@adolfont)...
