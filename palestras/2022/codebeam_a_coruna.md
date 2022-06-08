@@ -1,5 +1,5 @@
 --- 
-mapr: true
+marp: true
 size: 16:9
 theme: default
 paginate: true
@@ -180,7 +180,7 @@ https://github.com/adolfont/pensandoemelixir/tree/main/adventofcode/
 - It provides you with tests for your programming language
 - Current version: version 3
 
-Access [https://exercism.org/]()https://exercism.org/
+Access [https://exercism.org/](https://exercism.org/)
 
 ![bg 100% right:10%](img/cat6.png) 
 
@@ -313,7 +313,7 @@ https://exercism.org/mentoring/discussions/ad416ef10f1e42b4b97445f2ee672f53
 
 # Code BEAM Brasil 2022
 
-Probably in September. Online.
+September. Online.
 
 [https://www.codebeambr.com/](https://www.codebeambr.com/)
 
@@ -323,7 +323,7 @@ Probably in September. Online.
 
 # Elixir Brasil 2022
 
-Probably in September. ???
+Probably in November. ???
 
 
 [https://elixirbrasil.com/](https://elixirbrasil.com/)
