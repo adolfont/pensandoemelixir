@@ -3,6 +3,6 @@ defmodule Day052022Test do
   doctest Day052022
 
   test "greets the world" do
-    assert Day052022.hello() == :world
+    assert Day052022.main() == :ok
   end
 end
