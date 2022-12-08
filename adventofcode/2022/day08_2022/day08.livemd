@@ -1,0 +1,247 @@
+# Advent of Code 2022 - Dia 8
+
+```elixir
+Mix.install([
+  {:kino, "~> 0.5.0"}
+])
+```
+
+## Entrada
+
+```elixir
+input = Kino.Input.textarea("Please paste your input file:")
+```
+
+```elixir
+input =
+  input
+  |> Kino.Input.read()
+
+IO.inspect(input)
+```
+
+## Part 1
+
+```elixir
+defmodule Day08 do
+  def parse(input) do
+    input
+    |> String.split()
+    |> Enum.with_index()
+    |> Enum.map(&parse_line/1)
+    |> List.flatten()
+    |> Enum.reduce(Map.new(), fn {value, key}, map -> Map.put(map, key, value) end)
+  end
+
+  defp parse_line({string, line_number}) do
+    string
+    |> String.graphemes()
+    |> Enum.with_index()
+    |> Enum.map(fn {char, column} -> {String.to_integer(char), {line_number + 1, column + 1}} end)
+  end
+
+  def task_1(input) do
+    map = parse(input)
+
+    {lines, columns} =
+      map
+      |> Map.keys()
+      |> Enum.max()
+
+    IO.inspect({lines, columns})
+
+    around_the_edge = 2 * lines + 2 * (columns - 2)
+
+    inside =
+      for i <- 2..(lines - 1), j <- 2..(columns - 1) do
+        {i, j, visible?(map, i, j, lines, columns)}
+      end
+      |> IO.inspect()
+      |> Enum.filter(fn {_line, _column, visibility} -> visibility end)
+      |> IO.inspect(label: "visible: ")
+      |> Enum.count()
+
+    around_the_edge + inside
+  end
+
+  def visible?(map, line, column, lines, columns) do
+    left_visible?(map, line, column, lines, columns) or
+      right_visible?(map, line, column, lines, columns) or
+      top_visible?(map, line, column, lines, columns) or
+      down_visible?(map, line, column, lines, columns)
+  end
+
+  def left_visible?(map, line, column, _lines, _columns) do
+    max =
+      for c <- 1..(column - 1) do
+        map[{line, c}]
+      end
+      |> Enum.max()
+
+    map[{line, column}] > max
+  end
+
+  def right_visible?(map, line, column, _lines, columns) do
+    max =
+      for c <- (column + 1)..columns do
+        map[{line, c}]
+      end
+      |> Enum.max()
+
+    map[{line, column}] > max
+  end
+
+  def top_visible?(map, line, column, _lines, _columns) do
+    max =
+      for l <- 1..(line - 1) do
+        map[{l, column}]
+      end
+      |> Enum.max()
+
+    map[{line, column}] > max
+  end
+
+  def down_visible?(map, line, column, lines, _columns) do
+    max =
+      for l <- (line + 1)..lines do
+        map[{l, column}]
+      end
+      |> Enum.max()
+
+    map[{line, column}] > max
+  end
+end
+
+Day08.task_1(input)
+# Day08.parse(input)
+```
+
+## Part 2
+
+```elixir
+defmodule Day08 do
+  def parse(input) do
+    input
+    |> String.split()
+    |> Enum.with_index()
+    |> Enum.map(&parse_line/1)
+    |> List.flatten()
+    |> Enum.reduce(Map.new(), fn {value, key}, map -> Map.put(map, key, value) end)
+  end
+
+  defp parse_line({string, line_number}) do
+    string
+    |> String.graphemes()
+    |> Enum.with_index()
+    |> Enum.map(fn {char, column} -> {String.to_integer(char), {line_number + 1, column + 1}} end)
+  end
+
+  def task_2(input) do
+    map = parse(input)
+
+    {lines, columns} =
+      map
+      |> Map.keys()
+      |> Enum.max()
+
+    for i <- 2..(lines - 1), j <- 2..(columns - 1) do
+      {i, j, scenic_score(map, i, j, lines, columns)}
+    end
+    |> Enum.max_by(fn {_, _, x} -> x end)
+  end
+
+  def scenic_score(map, line, column, lines, columns) do
+    left_score(map, line, column, lines, columns) *
+      right_score(map, line, column, lines, columns) *
+      top_score(map, line, column, lines, columns) *
+      down_score(map, line, column, lines, columns)
+  end
+
+  def left_score(map, line, column, _lines, _columns) do
+    list =
+      for c <- (column - 1)..1 do
+        map[{line, c}]
+      end
+      |> Enum.with_index()
+
+    len = length(list)
+
+    # {"left", :line, line, :col, column, :list, list, :len, len} |> IO.inspect()
+
+    list
+    |> Enum.reduce_while(1, fn {current_tree, position}, acc ->
+      if map[{line, column}] > current_tree and position + 1 !== len,
+        do: {:cont, acc + 1},
+        else: {:halt, acc}
+    end)
+
+    # |> IO.inspect(label: "left result")
+  end
+
+  def right_score(map, line, column, _lines, columns) do
+    list =
+      for c <- (column + 1)..columns do
+        map[{line, c}]
+      end
+      |> Enum.with_index()
+
+    len = length(list)
+
+    # {"right", :line, line, :col, column, :list, list, :len, len} |> IO.inspect()
+
+    list
+    |> Enum.reduce_while(1, fn {current_tree, position}, acc ->
+      if map[{line, column}] > current_tree and position + 1 !== len,
+        do: {:cont, acc + 1},
+        else: {:halt, acc}
+    end)
+
+    # |> IO.inspect(label: "right result")
+  end
+
+  def top_score(map, line, column, _lines, _columns) do
+    list =
+      for l <- (line - 1)..1 do
+        map[{l, column}]
+      end
+      |> Enum.with_index()
+
+    len = length(list)
+
+    # {"top", :line, line, :col, column, :list, list, :len, len} |> IO.inspect()
+
+    list
+    |> Enum.reduce_while(1, fn {current_tree, position}, acc ->
+      if map[{line, column}] > current_tree and position + 1 !== len,
+        do: {:cont, acc + 1},
+        else: {:halt, acc}
+    end)
+
+    # |> IO.inspect(label: "top result")
+  end
+
+  def down_score(map, line, column, lines, _columns) do
+    list =
+      for l <- (line + 1)..lines do
+        map[{l, column}]
+      end
+      |> Enum.with_index()
+
+    len = length(list)
+
+    # {"down", :line, line, :col, column, :list, list, :len, len} |> IO.inspect()
+
+    list
+    |> Enum.reduce_while(1, fn {current_tree, position}, acc ->
+      if map[{line, column}] > current_tree and position + 1 !== len,
+        do: {:cont, acc + 1},
+        else: {:halt, acc}
+    end)
+
+    # |> IO.inspect(label: "down result")
+  end
+end
+
+Day08.task_2(input)
+# Day08.parse(input)
+```
