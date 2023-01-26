@@ -153,10 +153,20 @@ defmodule Day102022v2Test do
   test "Description test - part 1" do
     {:ok, server} = Day102022v2.start_link(0)
 
-    result = Day102022v2.process(server, {:string, @input}) |> dbg()
+    result = Day102022v2.process(server, {:string, @input})
 
     assert result == 13140
   end
+
+  test "My Aoc test" do
+    {:ok, server} = Day102022v2.start_link(0)
+
+    result = Day102022v2.process(server, {:filename, "input.txt"})
+
+    assert result == 13740
+  end
+
+  # part 2
 
   test "Description test - part 2" do
     {:ok, server} = Day102022v2.start_link(0)
@@ -175,21 +185,20 @@ defmodule Day102022v2Test do
     assert result == answer
   end
 
-  test "My Aoc test" do
-    {:ok, server} = Day102022v2.start_link(0)
-
-    result = Day102022v2.process(server, {:filename, "input.txt"})
-
-    assert result == 13740
-  end
-
   test "My Aoc test - Task 2" do
     {:ok, server} = Day102022v2.start_link(0)
 
     result = Day102022v2.process(server, {:part2_filename, "input.txt"})
 
-    assert result == :ok
+    answer = """
+    ####.#..#.###..###..####.####..##..#....
+    ...#.#..#.#..#.#..#.#....#....#..#.#....
+    ..#..#..#.#..#.#..#.###..###..#....#....
+    .#...#..#.###..###..#....#....#....#....
+    #....#..#.#....#.#..#....#....#..#.#....
+    ####..##..#....#..#.#....####..##..####.
+    """
+
+    assert result == answer
   end
-
-
 end

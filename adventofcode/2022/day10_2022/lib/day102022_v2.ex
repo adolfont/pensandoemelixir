@@ -93,7 +93,6 @@ defmodule Day102022v2 do
     |> Enum.at(2)
     |> Tuple.to_list()
     |> Enum.at(1)
-    |> IO.puts()
   end
 
   defp parse("noop") do
@@ -114,21 +113,20 @@ defmodule Day102022v2 do
     end
   end
 
-  defp g(value, [x: x, row: row, crt: crt]) do
-    crt =
-      if row >= x - 1 and row <= x + 1 do
-        crt <> "#"
-      else
-        crt <> "."
-      end
+  defp g(value, x: x, row: row, crt: crt) do
+    crt = newcrt(row, x, crt)
 
-    {row, crt} =
-      if row == 39 do
-        {-1, crt <> "\n"}
-      else
-        {row, crt}
-      end
-
-    [x: x + value, row: row + 1, crt: crt]
+    [x: x + value, row: rem(row + 1, 40), crt: crt]
   end
+
+  defp newcrt(row, x, crt) when row >= x - 1 and row <= x + 1 do
+    crt <> "#" <> linejump(row)
+  end
+
+  defp newcrt(row, _, crt) do
+    crt <> "." <> linejump(row)
+  end
+
+  defp linejump(39), do: "\n"
+  defp linejump(_), do: ""
 end
