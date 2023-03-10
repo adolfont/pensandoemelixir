@@ -1,5 +1,7 @@
 # Aula 1 de Introdução a Elixir (09/03/2023)
 
+## Sobre este livebook
+
 Vídeo disponível em [https://www.youtube.com/watch?v=UC4cIIHry1I](https://www.youtube.com/watch?v=UC4cIIHry1I).
 
 ## Tipos básicos
