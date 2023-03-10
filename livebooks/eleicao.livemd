@@ -1,0 +1,205 @@
+# Aula 1 de Introdução a Elixir (09/03/2023)
+
+Vídeo disponível em [https://www.youtube.com/watch?v=UC4cIIHry1I](https://www.youtube.com/watch?v=UC4cIIHry1I).
+
+## Tipos básicos
+
+```elixir
+1340
+```
+
+```elixir
+"Adolfo Neto 64646"
+```
+
+```elixir
+3.333356
+```
+
+```elixir
+10 / 3
+```
+
+```elixir
+:idade
+```
+
+Tipos básicos:
+
+* Números inteiros
+* Strings
+* Números de ponto flutuante
+* Átomos
+
+## Tipos Complexos
+
+```elixir
+[]
+```
+
+```elixir
+[123, 676, 545]
+```
+
+```elixir
+["adolfo", 566, 683.78, :idade]
+```
+
+```elixir
+{133, "adolfo"}
+```
+
+```elixir
+{7676.33, "aldo", []}
+```
+
+```elixir
+%{"Adolfo" => 10, "Neto" => 20}
+```
+
+```elixir
+Map.keys(%{"Adolfo" => 10, "Neto" => 20})
+```
+
+```elixir
+Map.values(%{"Adolfo" => 10, "Neto" => 20})
+```
+
+## Operadores
+
+```elixir
+10 / 3
+```
+
+```elixir
+10 - 3
+```
+
+```elixir
+10 + 3 * 10
+```
+
+```elixir
+"ADOLFO " <> "NETO"
+```
+
+```elixir
+"ADOLFO" == "adolfo"
+```
+
+```elixir
+"ADOLFO" == "ADOLFO"
+```
+
+## Funções
+
+```elixir
+String.upcase("adolfo neto")
+```
+
+```elixir
+"ADOLFO" == String.upcase("adolfo")
+```
+
+```elixir
+String.capitalize("adolfo neto")
+```
+
+```elixir
+String.at("Adolfo", 3)
+```
+
+## Criar suas próprias funções
+
+```elixir
+defmodule Urna do
+  def vota(nome_pessoa_candidata) do
+    {nome_pessoa_candidata}
+  end
+
+  def vota(urna, numero, nome) do
+    [{numero, nome} | urna]
+  end
+
+  def resultado(urna) do
+    urna
+    |> Enum.map(fn {_numero, pessoa} -> pessoa end)
+    |> Enum.frequencies()
+    |> Map.to_list()
+  end
+
+  def mostra_vencedor(lista) do
+    {nome_vencedor, votos_vencedor} = Enum.max_by(lista, fn {_nome, votos} -> votos end)
+
+    "A pessoa vencedora da eleição foi #{nome_vencedor} com #{votos_vencedor} votos."
+  end
+end
+```
+
+```elixir
+Urna.vota("José Valim")
+
+Urna.vota("Joe Armstrong")
+
+Urna.vota([], 26, "Robert Virding")
+```
+
+```elixir
+minha_urna = []
+
+minha_urna = Urna.vota(minha_urna, 26, "Robert Virding")
+minha_urna = Urna.vota(minha_urna, 177, "José Valim")
+minha_urna = Urna.vota(minha_urna, 199, "Joe Armstrong")
+minha_urna = Urna.vota(minha_urna, 255, "Mike Williams")
+minha_urna = Urna.vota(minha_urna, 177, "José Valim")
+```
+
+```elixir
+[]
+|> Urna.vota(26, "Robert Virding")
+|> Urna.vota(177, "José Valim")
+|> Urna.vota(199, "Joe Armstrong")
+|> Urna.vota(255, "Mike Williams")
+|> Urna.vota(177, "José Valim")
+```
+
+```elixir
+[]
+|> Urna.vota(26, "Robert Virding")
+|> Urna.vota(177, "José Valim")
+|> Urna.vota(199, "Joe Armstrong")
+|> Urna.vota(255, "Mike Williams")
+|> Urna.vota(177, "José Valim")
+|> dbg()
+```
+
+## Calculando quem ganhou (depois que a eleição termina)
+
+```elixir
+[]
+|> Urna.vota(26, "Robert Virding")
+|> Urna.vota(177, "José Valim")
+|> Urna.vota(199, "Joe Armstrong")
+|> Urna.vota(255, "Mike Williams")
+|> Urna.vota(177, "José Valim")
+|> Urna.vota(167, "Grace Hopper")
+|> Urna.resultado()
+|> Urna.mostra_vencedor()
+|> dbg()
+```
+
+## Funções do Módulo Enum
+
+```elixir
+defmodule Matematica do
+  def dobro(x) do
+    x * 2
+  end
+end
+
+Enum.map([10, 2, 45], &Matematica.dobro/1)
+
+Enum.map([10, 2, 45], fn x -> x * 2 end)
+
+Enum.map([10, 2, 45], &(&1 * 2))
+```
