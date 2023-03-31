@@ -1,0 +1,163 @@
+<!-- livebook:{"persist_outputs":true} -->
+
+# Geração de Imagens com Bumblebee, Elixir, Livebook
+
+```elixir
+Mix.install(
+  [
+    {:kino_bumblebee, "~> 0.2.0"},
+    {:exla, "~> 0.5.1"}
+  ],
+  config: [nx: [default_backend: EXLA.Backend]]
+)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:ok
+```
+
+## Geração de imagens
+
+<!-- livebook:{"attrs":{"compiler":"exla","num_images_per_prompt":2,"num_steps":40,"seed":null,"sequence_length":50,"task_id":"text_to_image","variant_id":"stable_diffusion_v1_4"},"chunks":[[0,1225],[1227,584]],"kind":"Elixir.KinoBumblebee.TaskCell","livebook_object":"smart_cell"} -->
+
+```elixir
+repository_id = "CompVis/stable-diffusion-v1-4"
+{:ok, tokenizer} = Bumblebee.load_tokenizer({:hf, "openai/clip-vit-large-patch14"})
+
+{:ok, clip} =
+  Bumblebee.load_model({:hf, repository_id, subdir: "text_encoder"},
+    log_params_diff: false
+  )
+
+{:ok, unet} =
+  Bumblebee.load_model({:hf, repository_id, subdir: "unet"},
+    params_filename: "diffusion_pytorch_model.bin",
+    log_params_diff: false
+  )
+
+{:ok, vae} =
+  Bumblebee.load_model({:hf, repository_id, subdir: "vae"},
+    architecture: :decoder,
+    params_filename: "diffusion_pytorch_model.bin",
+    log_params_diff: false
+  )
+
+{:ok, scheduler} = Bumblebee.load_scheduler({:hf, repository_id, subdir: "scheduler"})
+
+{:ok, featurizer} = Bumblebee.load_featurizer({:hf, repository_id, subdir: "feature_extractor"})
+
+{:ok, safety_checker} =
+  Bumblebee.load_model({:hf, repository_id, subdir: "safety_checker"},
+    log_params_diff: false
+  )
+
+serving =
+  Bumblebee.Diffusion.StableDiffusion.text_to_image(clip, unet, vae, tokenizer, scheduler,
+    num_steps: 40,
+    num_images_per_prompt: 2,
+    safety_checker: safety_checker,
+    safety_checker_featurizer: featurizer,
+    compile: [batch_size: 1, sequence_length: 50],
+    defn_options: [compiler: EXLA]
+  )
+
+text_input =
+  Kino.Input.textarea("Text",
+    default: "numbat, forest, high quality, detailed, digital art"
+  )
+
+form = Kino.Control.form([text: text_input], submit: "Run")
+frame = Kino.Frame.new()
+
+form
+|> Kino.Control.stream()
+|> Kino.listen(fn %{data: %{text: text}} ->
+  Kino.Frame.render(frame, Kino.Markdown.new("Running..."))
+  output = Nx.Serving.run(serving, text)
+
+  for result <- output.results do
+    Kino.Image.new(result.image)
+  end
+  |> Kino.Layout.grid(columns: 2)
+  |> then(&Kino.Frame.render(frame, &1))
+end)
+
+Kino.Layout.grid([form, frame], boxed: true, gap: 16)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+
+15:19:53.555 [info] TfrtCpuClient created.
+
+```
+
+<!-- livebook:{"attrs":{"compiler":"exla","num_images_per_prompt":2,"num_steps":20,"seed":null,"sequence_length":50,"task_id":"text_to_image","variant_id":"stable_diffusion_v1_4"},"chunks":[[0,1225],[1227,584]],"kind":"Elixir.KinoBumblebee.TaskCell","livebook_object":"smart_cell"} -->
+
+```elixir
+repository_id = "CompVis/stable-diffusion-v1-4"
+{:ok, tokenizer} = Bumblebee.load_tokenizer({:hf, "openai/clip-vit-large-patch14"})
+
+{:ok, clip} =
+  Bumblebee.load_model({:hf, repository_id, subdir: "text_encoder"},
+    log_params_diff: false
+  )
+
+{:ok, unet} =
+  Bumblebee.load_model({:hf, repository_id, subdir: "unet"},
+    params_filename: "diffusion_pytorch_model.bin",
+    log_params_diff: false
+  )
+
+{:ok, vae} =
+  Bumblebee.load_model({:hf, repository_id, subdir: "vae"},
+    architecture: :decoder,
+    params_filename: "diffusion_pytorch_model.bin",
+    log_params_diff: false
+  )
+
+{:ok, scheduler} = Bumblebee.load_scheduler({:hf, repository_id, subdir: "scheduler"})
+
+{:ok, featurizer} = Bumblebee.load_featurizer({:hf, repository_id, subdir: "feature_extractor"})
+
+{:ok, safety_checker} =
+  Bumblebee.load_model({:hf, repository_id, subdir: "safety_checker"},
+    log_params_diff: false
+  )
+
+serving =
+  Bumblebee.Diffusion.StableDiffusion.text_to_image(clip, unet, vae, tokenizer, scheduler,
+    num_steps: 20,
+    num_images_per_prompt: 2,
+    safety_checker: safety_checker,
+    safety_checker_featurizer: featurizer,
+    compile: [batch_size: 1, sequence_length: 50],
+    defn_options: [compiler: EXLA]
+  )
+
+text_input =
+  Kino.Input.textarea("Text",
+    default: "numbat, forest, high quality, detailed, digital art"
+  )
+
+form = Kino.Control.form([text: text_input], submit: "Run")
+frame = Kino.Frame.new()
+
+form
+|> Kino.Control.stream()
+|> Kino.listen(fn %{data: %{text: text}} ->
+  Kino.Frame.render(frame, Kino.Markdown.new("Running..."))
+  output = Nx.Serving.run(serving, text)
+
+  for result <- output.results do
+    Kino.Image.new(result.image)
+  end
+  |> Kino.Layout.grid(columns: 2)
+  |> then(&Kino.Frame.render(frame, &1))
+end)
+
+Kino.Layout.grid([form, frame], boxed: true, gap: 16)
+```
