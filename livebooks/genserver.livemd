@@ -1,0 +1,59 @@
+# GenServer
+
+## Exemplo de GenServer
+
+```elixir
+defmodule ServidorDeNumero do
+  use GenServer
+
+  def start_link(state \\ []) do
+    GenServer.start_link(__MODULE__, state, name: __MODULE__)
+  end
+
+  @impl true
+  def init(numero), do: {:ok, numero}
+
+  @impl true
+  def handle_call(:num, _from, state) do
+    {:reply, "O número atual é #{state}.", state}
+  end
+
+  @impl true
+  def handle_cast({:newstate, newstate}, _state) do
+    {:noreply, newstate}
+  end
+
+  @impl true
+  def handle_cast({:addtostate, increment}, state) do
+    {:noreply, state + increment}
+  end
+end
+```
+
+```elixir
+{_, {_, pid}} = ServidorDeNumero.start_link(1)
+```
+
+```elixir
+Process.alive?(pid)
+```
+
+```elixir
+GenServer.call(pid, :num)
+```
+
+```elixir
+GenServer.cast(pid, {:newstate, 76876})
+```
+
+```elixir
+GenServer.cast(pid, {:newstate, 1})
+```
+
+```elixir
+GenServer.cast(pid, {:newstate, 123})
+```
+
+```elixir
+GenServer.cast(pid, {:addtostate, 100})
+```
