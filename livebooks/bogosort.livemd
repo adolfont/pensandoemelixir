@@ -1,0 +1,46 @@
+# Bogosort
+
+## What is Bogosort?
+
+"In computer science, bogosort[1][2] (also known as permutation sort, stupid sort,[3] slowsort or bozosort) is a sorting algorithm based on the generate and test paradigm." Source: [Wikipedia](https://en.wikipedia.org/wiki/Bogosort).
+
+## Section
+
+```elixir
+defmodule Bogosort do
+  @spec sort(list(any())) :: list(any())
+  def sort(list) do
+    new_list = Enum.shuffle(list)
+
+    if is_sorted(new_list) do
+      new_list
+    else
+      sort(list)
+    end
+  end
+
+  defp is_sorted([_element]), do: true
+  defp is_sorted([element1, element2 | _]) when element1 > element2, do: false
+  defp is_sorted([_element1, element2 | rest]), do: is_sorted([element2 | rest])
+end
+```
+
+## Testing Bogosort
+
+```elixir
+Bogosort.sort([1, 2, 3])
+```
+
+```elixir
+Bogosort.sort([1034, 1145, 1163, 1199])
+```
+
+```elixir
+random_list =
+  for _ <- 1..11 do
+    Enum.shuffle(1..10000)
+    |> Enum.take(1)
+  end
+
+Bogosort.sort(random_list)
+```
