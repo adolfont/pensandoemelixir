@@ -44,3 +44,7 @@ random_list =
 
 Bogosort.sort(random_list)
 ```
+
+## Thanks
+
+Thanks to Manuel Rubio for mentioning Bogosort in his [newsletter](https://mailchi.mp/95a006ecda5d/altenwald-algoritmos-ordenacion?e=8591bd6870).
