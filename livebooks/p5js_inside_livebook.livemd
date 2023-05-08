@@ -1,0 +1,32 @@
+# p5js inside Livebook
+
+```elixir
+Mix.install([
+  {:kino, "~> 0.9.3"}
+])
+```
+
+## P5js code
+
+```elixir
+defmodule P5js do
+  use Kino.JS
+
+  def new(html) do
+    Kino.JS.new(__MODULE__, html)
+  end
+
+  asset "main.js" do
+    """
+    export function init(ctx, html) {
+      ctx.importJS("https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js");
+      ctx.importJS("https://cdn.jsdelivr.net/gh/adolfont/adolfont.github.io/js/sketch.js");
+
+      ctx.root.innerHTML = html;
+    }
+    """
+  end
+end
+
+P5js.new("<h1>Testing p5js inside livebook</h1>")
+```
