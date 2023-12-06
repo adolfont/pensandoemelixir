@@ -61,4 +61,27 @@ defmodule Day02 do
   defp get_color_and_number(["green", n]) do
     {:green, String.to_integer(n)}
   end
+
+  def task2(input) do
+    input
+    |> String.trim()
+    |> String.split("\n")
+    |> Enum.map(&parse_line/1)
+    |> Enum.map(&triples/1)
+    |> Enum.map(fn {x, y, z} -> x * y * z end)
+    |> Enum.sum()
+  end
+
+  defp triples([_id | game_as_string]) do
+    game_as_string
+    |> Enum.map(&String.trim/1)
+    |> Enum.map(&parse_game/1)
+    |> find_fewest()
+  end
+
+  defp find_fewest(list) do
+    Enum.reduce(list, fn {x, y, z}, {maxx, maxy, maxz} ->
+      {max(x, maxx), max(y, maxy), max(z, maxz)}
+    end)
+  end
 end
