@@ -1,0 +1,161 @@
+<!-- livebook:{"file_entries":[{"name":"input.txt","type":"attachment"}]} -->
+
+# Advent of Code 2024 - Day 03
+
+## Solutions
+
+```elixir
+input = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
+pattern = ~r/mul\(\d+,\d+\)/
+
+matches = Regex.scan(pattern, input) |> List.flatten()
+IO.inspect(matches)
+```
+
+```elixir
+input = "mul(2,4)"
+
+# Use pattern matching to extract numbers
+result =
+  case Regex.run(~r/mul\((\d+),(\d+)\)/, input) do
+    [_, num1, num2] ->
+      # Convert strings to integers and multiply
+      String.to_integer(num1) * String.to_integer(num2)
+
+    _ ->
+      "Invalid input"
+  end
+
+IO.puts("Result: #{result}")
+```
+
+```elixir
+defmodule Day03 do
+  def parse(string) do
+    pattern = ~r/mul\(\d+,\d+\)/
+    Regex.scan(pattern, string) |> List.flatten()
+  end
+
+  def multiply(string) do
+      case Regex.run(~r/mul\((\d+),(\d+)\)/, string) do
+    [_, num1, num2] ->
+      String.to_integer(num1) * String.to_integer(num2)
+    _ ->
+      "Invalid input"
+  end
+    
+    
+  end
+
+
+  def multiply_all(list) do
+    list  
+    |> Enum.map(&multiply/1)
+    |> Enum.sum()  
+  end
+
+  def task1(string) do
+    string
+    |> parse()
+    |> multiply_all()
+  end
+  
+end
+```
+
+```elixir
+input = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
+Day03.task1(input)
+```
+
+```elixir
+input = File.read!("/data/files/input.txt")
+Day03.task1(input)
+```
+
+```elixir
+input = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
+pattern = ~r/mul\(\d+,\d+\)|do\(\)|don't\(\)/
+
+matches = Regex.scan(pattern, input) |> List.flatten()
+IO.inspect(matches)
+```
+
+```elixir
+defmodule FilterMul do
+  def filter_mul_operations(list) do
+    list
+    |> Enum.reduce({[], true}, fn
+      "do()", {acc, _} -> {acc, true}  # Start adding mul items after "do()"
+      "don't()", {acc, _} -> {acc, false}  # Stop adding mul items after "don't()"
+      mul, {acc, true} -> 
+        if String.starts_with?(mul, "mul") do
+          {[mul | acc], true}  # Collect mul items during "do()" phase
+        else
+          {acc, true}  # Ignore non-mul items during "do()" phase
+        end
+      _other, acc -> acc  # Keep current state for other items
+    end)
+    |> elem(0)
+    |> Enum.reverse()  # Reverse the list to maintain correct order
+  end
+end
+
+# Example usage:
+lst = ["mul(2,4)", "don't()", "mul(5,5)", "mul(11,8)", "do()", "mul(8,5)", "mul(87,5)", "mul(87,5)", "don't()", "mul(87,50)"]
+IO.inspect(FilterMul.filter_mul_operations(lst))
+
+```
+
+```elixir
+defmodule Day03b do
+  def parse(string) do
+    pattern = ~r/mul\(\d+,\d+\)|do\(\)|don't\(\)/
+    Regex.scan(pattern, string) |> List.flatten()
+  end
+
+  def multiply(string) do
+      case Regex.run(~r/mul\((\d+),(\d+)\)/, string) do
+    [_, num1, num2] ->
+      String.to_integer(num1) * String.to_integer(num2)
+    _ ->
+      "Invalid input"
+  end
+    
+  end
+  
+  def remove_donts(list) do 
+
+    list
+    |> Enum.reduce({[], true}, fn
+      "do()", {acc, _} -> {acc, true}  # Start adding mul items after "do()"
+      "don't()", {acc, _} -> {acc, false}  # Stop adding mul items after "don't()"
+      mul, {acc, true} -> 
+          {[mul | acc], true}  # Collect mul items during "do()" phase
+      _other, acc -> acc  # Keep current state for other items
+    end)
+    |> elem(0)
+ 
+  end
+
+  
+  def multiply_all(list) do
+    list  
+    |> Enum.map(&multiply/1)
+    |> Enum.sum()  
+  end
+
+  def task2(string) do
+    string
+    |> parse()
+    |> remove_donts()
+    |> multiply_all()
+  end
+  
+end
+```
+
+```elixir
+input = File.read!("/data/files/input.txt")
+Day03b.task2(input)
+```
