@@ -1,0 +1,220 @@
+<!-- livebook:{"file_entries":[{"name":"input.txt","type":"attachment"}]} -->
+
+# Advent of Code 2024 Day 4
+
+## Input Data
+
+```elixir
+test_input = 
+"""
+MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX
+"""
+problem_input = File.read!("/data/files/input.txt")
+```
+
+## Solution
+
+```elixir
+m = %{{1,1} => "9", {2,3} => "8"}
+```
+
+```elixir
+{m[{1,1}],  m[{2,3}]}
+```
+
+```elixir
+defmodule Matrix do
+  # Function to create a matrix from a string input
+  def from_string(input) do
+    input
+    |> String.split("\n", trim: true)          # Split into rows
+    |> Enum.with_index(1)                      # Enumerate rows starting at 1
+    |> Enum.reduce(%{}, fn {row, row_idx}, acc ->
+      row
+      |> String.graphemes()                    # Split row into characters
+      |> Enum.with_index(1)                    # Enumerate columns starting at 1
+      |> Enum.reduce(acc, fn {char, col_idx}, acc ->
+        Map.put(acc, {row_idx, col_idx}, char) # Add cell to map
+      end)
+    end)
+  end
+
+  def get_dimensions(matrix) do
+    matrix    
+    |> Map.keys()
+    |> Enum.sort(fn ({x1,y1}, {x2,y2}) -> x1+y1 > x2+y2 end)
+    |> Kernel.hd()
+  end
+
+  # Function to get a value from the matrix
+  def get(matrix, row, col), do: Map.get(matrix, {row, col})
+
+  # Function to set a value in the matrix
+  def set(matrix, row, col, value), do: Map.put(matrix, {row, col}, value)
+
+
+
+  def count_word_occurrences(matrix, rows, cols, word) do
+    
+    directions = [
+      # Horizontal (left to right)
+      fn {r, c}, step -> {r, c + step} end,
+      # Horizontal (right to left)
+      fn {r, c}, step -> {r, c - step} end,
+      # Vertical (top to bottom)
+      fn {r, c}, step -> {r + step, c} end,
+      # Vertical (bottom to top)
+      fn {r, c}, step -> {r - step, c} end,
+      # Diagonal "\" (top-left to bottom-right)
+      fn {r, c}, step -> {r + step, c + step} end,
+      # Diagonal "\" (bottom-right to top-left)
+      fn {r, c}, step -> {r - step, c - step} end,
+      # Diagonal "/" (top-right to bottom-left)
+      fn {r, c}, step -> {r + step, c - step} end,
+      # Diagonal "/" (bottom-left to top-right)
+      fn {r, c}, step -> {r - step, c + step} end
+    ]
+    
+    # Count occurrences using pattern matching and filtering
+    Enum.reduce(directions, 0, fn direction, acc ->
+      acc + count_direction_occurrences(matrix, rows, cols, word, direction)
+    end)
+  end
+  
+  defp count_direction_occurrences(matrix, rows, cols, word, direction) do
+    # Generate all possible starting positions
+    for r <- 1..rows, c <- 1..cols do
+      # Check if the word can fit in this direction from the starting position
+      if check_word_at_position(matrix, {r, c}, word, direction) do
+        1
+      else
+        0
+      end
+    end
+    |> Enum.sum()
+  end
+  
+  defp check_word_at_position(matrix, start_pos, word, direction) do
+    # Check if the entire word can be matched in the given direction
+    word_letters = String.graphemes(word)
+    
+    Enum.with_index(word_letters)
+    |> Enum.all?(fn {letter, step} ->
+      pos = direction.(start_pos, step)
+      Map.get(matrix, pos, "") == String.upcase(letter)
+    end)
+  end
+
+
+
+  def count_x_pattern_occurrences(matrix, rows, cols, word) do
+    # Define the four X-pattern offsets
+    x_patterns = [
+      # First pattern: M.S
+      #               .A.
+      #               M.S
+      [
+        {{0, 0}, word |> String.at(0)},
+        {{0, 2}, word |> String.at(2)},
+        {{1, 1}, word |> String.at(1)},
+        {{2, 0}, word |> String.at(0)},
+        {{2, 2}, word |> String.at(2)}
+      ],
+      # Second pattern: M.M
+      #                 .A.
+      #                 S.S
+      [
+        {{0, 0}, word |> String.at(0)},
+        {{0, 2}, word |> String.at(0)},
+        {{1, 1}, word |> String.at(1)},
+        {{2, 0}, word |> String.at(2)},
+        {{2, 2}, word |> String.at(2)}
+      ],
+      # Third pattern: S.M
+      #                .A.
+      #                S.M
+      [
+        {{0, 0}, word |> String.at(2)},
+        {{0, 2}, word |> String.at(0)},
+        {{1, 1}, word |> String.at(1)},
+        {{2, 0}, word |> String.at(2)},
+        {{2, 2}, word |> String.at(0)}
+      ],
+      # Fourth pattern: S.S
+      #                 .A.
+      #                 M.M
+      [
+        {{0, 0}, word |> String.at(2)},
+        {{0, 2}, word |> String.at(2)},
+        {{1, 1}, word |> String.at(1)},
+        {{2, 0}, word |> String.at(0)},
+        {{2, 2}, word |> String.at(0)}
+      ]
+    ]
+    
+    # Count occurrences across the matrix
+    for r <- 1..(rows-2), c <- 1..(cols-2) do
+      Enum.count(x_patterns, fn pattern ->
+        Enum.all?(pattern, fn {{dr, dc}, letter} ->
+          Map.get(matrix, {r + dr, c + dc}, "") == letter
+        end)
+      end)
+    end
+    |> Enum.sum()
+  end
+end
+```
+
+```elixir
+String.graphemes("XMAS")
+```
+
+```elixir
+defmodule Day4 do
+  def task1(input) do
+    matrix = Matrix.from_string(input)
+    {lines, cols} = Matrix.get_dimensions(matrix)
+
+    Matrix.count_word_occurrences(matrix, lines, cols, "XMAS")
+  end
+
+  def task2(input) do
+    matrix = Matrix.from_string(input)
+    {lines, cols} = Matrix.get_dimensions(matrix)
+
+    Matrix.count_x_pattern_occurrences(matrix, lines, cols, "MAS")
+    
+  end
+end
+```
+
+
+
+```elixir
+ Day4.task1(test_input)
+```
+
+```elixir
+ Day4.task1(problem_input)
+```
+
+```elixir
+ Day4.task2(test_input)
+```
+
+```elixir
+ Day4.task2(problem_input)
+```
+
+```elixir
+Enum.all?([true, true, true, true, true])
+```
